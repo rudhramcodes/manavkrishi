@@ -52,7 +52,7 @@ export default function ScheduleSection() {
           </div>
 
           {/* Vintage TV with Playing Video */}
-          <div className="w-64 sm:w-72 md:w-80 lg:w-[320px] aspect-[512/360] relative select-none drop-shadow-[0_20px_45px_rgba(0,0,0,0.65)]">
+          <div className="w-64 sm:w-72 md:w-80 lg:w-[320px] aspect-[512/360] relative select-none">
 
             {/* Video Container inside TV Screen Cutout */}
             <div
@@ -101,7 +101,7 @@ export default function ScheduleSection() {
         {/* Right Column: Scalloped Ticket Card */}
         <div className="w-full md:w-auto flex justify-center">
           <div
-            className="relative w-full max-w-[320px] sm:max-w-[350px] md:max-w-[370px] px-8 sm:px-10 py-12 sm:py-14 select-none drop-shadow-[0_20px_45px_rgba(0,0,0,0.4)]"
+            className="relative w-full max-w-[320px] sm:max-w-[350px] md:max-w-[370px] px-8 sm:px-10 py-12 sm:py-14 select-none"
             style={{
               background: `
                 radial-gradient(circle 28px at 0 0, transparent 28px, #F2E9DC 28.5px) top left,

@@ -56,7 +56,7 @@ export default function LocationSection() {
             href="https://maps.google.com/?q=St.+Mary's+Chapel+Blessing+Lane"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#580C1B] hover:bg-[#470101] text-white font-inter text-xs sm:text-[13px] font-medium tracking-normal px-7 sm:px-8 py-2.5 sm:py-3 transition-colors duration-200 shadow-sm cursor-pointer"
+            className="inline-block bg-[#580C1B] hover:bg-[#470101] text-white font-inter text-xs sm:text-[13px] font-medium tracking-normal px-7 sm:px-8 py-2.5 sm:py-3 transition-colors duration-200 cursor-pointer"
           >
             View in google map
           </a>
