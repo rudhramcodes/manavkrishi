@@ -45,14 +45,14 @@ export default function Home() {
         <LocationSection />
         <ScheduleSection />
         <GallerySection onSelectPhoto={setSelectedPhoto} />
-        <WishesSection 
+        {/* <WishesSection 
           wishes={wishes} 
           onOpenRsvp={() => setRsvpModalOpen(true)} 
-        />
+        /> */}
       </main>
 
       {/* Footer */}
-      <Footer />
+      {/* <Footer /> */}
 
       {/* Modals & Floating Utilities */}
       <AudioToggle isPlaying={isPlaying} onToggle={toggleMusic} />
