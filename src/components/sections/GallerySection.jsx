@@ -95,25 +95,45 @@ export default function GallerySection({ onSelectPhoto }) {
         ))}
       </div>
 
-      {/* Mobile/Tablet View: Responsive 2x2 Grid with white borders */}
-      <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden w-full max-w-sm sm:max-w-md mx-auto z-10 px-2 mt-8">
+      {/* Mobile/Tablet View: Royal Vintage Coverflow-style Scroll */}
+      <div className="lg:hidden w-full mt-10 overflow-x-auto snap-x snap-mandatory flex gap-6 px-[15vw] sm:px-[25vw] pb-12 pt-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         {moments.map((item, idx) => {
-          const mobileRotation = idx % 2 === 0 ? '-rotate-3' : 'rotate-3';
+          // Add subtle alternating rotation to give it a natural scattered feel
+          const rotation = idx % 2 === 0 ? '-rotate-1' : 'rotate-1';
+          
           return (
             <div
               key={item.id}
-              className={`flex justify-center ${mobileRotation}`}
+              className="flex-none w-[70vw] sm:w-[50vw] max-w-[280px] snap-center shrink-0 flex justify-center transition-all duration-500 ease-out"
             >
+              {/* Royal Vintage Polaroid Card */}
               <div
                 onClick={() => onSelectPhoto && onSelectPhoto(item)}
-                className="bg-white p-2 sm:p-2.5 shadow-[0_8px_20px_rgba(71,1,1,0.12)] cursor-pointer select-none"
+                className={`bg-[#FDFBF7] p-3 pb-4 sm:p-4 sm:pb-5 rounded-sm shadow-[0_15px_40px_rgba(71,1,1,0.18)] border border-[#E4E2B8]/80 cursor-pointer select-none w-full relative transform transition-transform duration-300 active:scale-95 ${rotation}`}
               >
-                <div className="w-32 sm:w-40 aspect-square overflow-hidden bg-stone-100">
+                {/* Top Pin */}
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
+                  <img src="/images/pin.avif" alt="pin" className="w-8 h-8 drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
+                </div>
+                
+                {/* Photo */}
+                <div className="w-full aspect-[4/5] overflow-hidden bg-stone-200 relative z-10 border border-[#470101]/10">
                   <img
                     src={item.src}
                     alt={item.alt}
                     className="w-full h-full object-cover object-center"
                   />
+                  {/* Vintage Warmth Overlay */}
+                  <div className="absolute inset-0 bg-[#E4E2B8]/10 mix-blend-overlay pointer-events-none" />
+                </div>
+                
+                {/* Bottom Numbering */}
+                <div className="mt-3 sm:mt-4 flex justify-center items-center gap-3">
+                  <div className="w-6 h-[1px] bg-[#470101]/30"></div>
+                  <span className="font-luxurious text-[#470101] text-xl opacity-80 leading-none mt-1">
+                    {`0${idx + 1}`}
+                  </span>
+                  <div className="w-6 h-[1px] bg-[#470101]/30"></div>
                 </div>
               </div>
             </div>
