@@ -77,7 +77,7 @@ export default function ScheduleSection() {
                 muted
                 playsInline
                 poster="/images/tv_poster.jpg"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-[center_30%]"
               >
                 <source src="/videos/pinterest_dance_full.mp4" type="video/mp4" />
                 <source src="https://v1.pinimg.com/videos/iht/hls/b5/82/21/b58221abf387e516297aac750cc6ea1b.m3u8" type="application/x-mpegURL" />
