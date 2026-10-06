@@ -4,7 +4,7 @@ export default function StorySection() {
   return (
     <section
       id="story"
-      className="relative w-full py-16 sm:py-20 md:py-24 flex items-center justify-center overflow-hidden"
+      className="relative w-full py-20 sm:py-24 md:py-28 lg:py-32 flex items-center justify-center overflow-hidden"
     >
       {/* Background Wedding Couple Image (bg3.avif) */}
       <div
@@ -18,7 +18,7 @@ export default function StorySection() {
       </div>
 
       {/* Center Parchment Card Container */}
-      <div className="relative z-10 w-[92%] sm:w-[86%] max-w-[430px] sm:max-w-[480px] md:max-w-[510px] mx-auto">
+      <div className="relative z-10 w-[88%] xs:w-[85%] sm:w-[78%] md:w-[65%] lg:w-[50%] max-w-[510px] mx-auto">
 
         {/* Torn Parchment Paper Background */}
         <img
@@ -32,7 +32,7 @@ export default function StorySection() {
           className="absolute left-1/2 -translate-x-1/2 z-20 pointer-events-none select-none"
           style={{
             top: '-10%',
-            width: '28%',
+            width: '26%',
           }}
         >
           <img
@@ -43,20 +43,20 @@ export default function StorySection() {
         </div>
 
         {/* Content Centered on the Paper */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-8 sm:px-12 md:px-14 pt-8 sm:pt-10 md:pt-12 pb-8 sm:pb-12 text-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-6 xs:px-7 sm:px-10 md:px-12 lg:px-14 pt-6 sm:pt-8 md:pt-10 pb-6 sm:pb-10 md:pb-12 text-center">
 
-          {/* Section Title: "Our Story" - Made larger and shifted up */}
-          <h2 className="flex items-baseline justify-center text-[#470101] leading-none mb-4 sm:mb-6 -mt-3 sm:-mt-5 md:-mt-6 select-none drop-shadow-sm">
-            <span className="font-luxurious text-6xl sm:text-7xl md:text-8xl -mr-1">O</span>
-            <span className="font-instrument text-3xl sm:text-4xl md:text-[42px] tracking-widest uppercase">UR</span>
-            <span className="w-2.5 sm:w-3.5 inline-block" />
-            <span className="font-luxurious text-6xl sm:text-7xl md:text-8xl -mr-1">S</span>
-            <span className="font-instrument text-3xl sm:text-4xl md:text-[42px] tracking-widest uppercase">TORY</span>
+          {/* Section Title: "Our Story" */}
+          <h2 className="flex items-baseline justify-center text-[#470101] leading-none mb-3 sm:mb-5 md:mb-6 -mt-2 sm:-mt-4 md:-mt-6 select-none drop-shadow-sm">
+            <span className="font-luxurious text-5xl sm:text-6xl md:text-7xl lg:text-8xl -mr-1">O</span>
+            <span className="font-instrument text-[22px] sm:text-3xl md:text-4xl lg:text-[42px] tracking-widest uppercase">UR</span>
+            <span className="w-2 sm:w-3 md:w-3.5 inline-block" />
+            <span className="font-luxurious text-5xl sm:text-6xl md:text-7xl lg:text-8xl -mr-1">S</span>
+            <span className="font-instrument text-[22px] sm:text-3xl md:text-4xl lg:text-[42px] tracking-widest uppercase">TORY</span>
           </h2>
 
           {/* Story Body Text */}
-          <div className="max-w-[310px] sm:max-w-[350px] md:max-w-[350px] text-[#470101] font-inter text-[12px] sm:text-[13.5px] md:text-[14px] leading-[1.45] sm:leading-[1.5] font-normal tracking-tight text-center">
-            <p className="mb-3">
+          <div className="max-w-[240px] xs:max-w-[270px] sm:max-w-[320px] md:max-w-[350px] text-[#470101] font-inter text-[10.5px] xs:text-[11px] sm:text-[13px] md:text-[14px] leading-[1.5] sm:leading-[1.55] font-normal tracking-tight text-center">
+            <p className="mb-2 sm:mb-3">
               Some journeys are beautifully written in the stars, brought to life through the grace of time and the blessings of loved ones. What began as a meeting of two families has naturally blossomed into a profound connection of two hearts.
             </p>
             <p>

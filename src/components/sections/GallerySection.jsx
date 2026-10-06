@@ -47,7 +47,7 @@ export default function GallerySection({ onSelectPhoto }) {
   return (
     <section
       id="gallery"
-      className="relative w-full min-h-[85vh] lg:min-h-screen py-16 sm:py-20 lg:py-24 px-4 sm:px-8 bg-[#F7EAD7] flex items-center justify-center overflow-hidden"
+      className="relative w-full min-h-[85vh] lg:min-h-screen py-16 sm:py-20 lg:py-24 px-4 sm:px-8 bg-[#F7EAD7] flex flex-col items-center justify-center overflow-hidden"
     >
       {/* Center Typography & Editorial Description */}
       <div className="z-10 text-center max-w-sm sm:max-w-md mx-auto select-none px-4">
