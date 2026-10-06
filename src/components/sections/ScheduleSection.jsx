@@ -1,5 +1,6 @@
 import React from 'react';
 import { Wine, Bell, UtensilsCrossed, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function ScheduleSection() {
   const events = [
@@ -30,6 +31,43 @@ export default function ScheduleSection() {
     }
   ];
 
+  // Variants for TV Power On
+  const tvVariants = {
+    hidden: { opacity: 0, scale: 0.85, filter: 'brightness(0.2)' },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      filter: 'brightness(1)',
+      transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } 
+    }
+  };
+
+  // Variants for the Ticket Card Parent
+  const ticketVariants = {
+    hidden: { opacity: 0, x: 30 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        staggerChildren: 0.15,
+        delayChildren: 0.4
+      }
+    }
+  };
+
+  // Variants for each event inside the Ticket
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.3, y: 15 },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      y: 0,
+      transition: { type: "spring", stiffness: 220, damping: 14 }
+    }
+  };
+
   return (
     <section
       id="schedule"
@@ -41,7 +79,13 @@ export default function ScheduleSection() {
       <div className="max-w-5xl w-full mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-12 sm:gap-16 lg:gap-24">
 
         {/* Left Column: Heading & Vintage TV */}
-        <div className="flex flex-col items-center md:items-start text-left">
+        <motion.div 
+          className="flex flex-col items-center md:items-start text-left"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={tvVariants}
+        >
 
           {/* Section Heading: "Schedule of events" */}
           <div className="select-none text-center md:text-left mb-12 sm:mb-16 md:mb-20">
@@ -101,10 +145,16 @@ export default function ScheduleSection() {
             />
           </div>
 
-        </div>
+        </motion.div>
 
         {/* Right Column: Scalloped Ticket Card */}
-        <div className="w-full md:w-auto flex justify-center">
+        <motion.div 
+          className="w-full md:w-auto flex justify-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={ticketVariants}
+        >
           <div
             className="relative w-full max-w-[320px] sm:max-w-[350px] md:max-w-[370px] px-8 sm:px-10 py-12 sm:py-14 select-none"
             style={{
@@ -128,16 +178,16 @@ export default function ScheduleSection() {
 
               {events.map((event, idx) => (
                 event.isDate ? (
-                  <div key={idx} className="relative flex items-center gap-4 sm:gap-5 z-10 pt-2 pb-1">
+                  <motion.div variants={itemVariants} key={idx} className="relative flex items-center gap-4 sm:gap-5 z-10 pt-2 pb-1">
                     <div className="flex items-center justify-center flex-shrink-0">
                       <div className="w-2.5 h-2.5 rounded-full bg-[#C89B53] ring-2 ring-[#F2E9DC]" />
                     </div>
                     <span className="font-instrument text-2xl sm:text-3xl text-[#580C1B] leading-none uppercase tracking-wide">
                       {event.title}
                     </span>
-                  </div>
+                  </motion.div>
                 ) : (
-                  <div key={idx} className="relative flex items-start gap-4 sm:gap-5 z-10">
+                  <motion.div variants={itemVariants} key={idx} className="relative flex items-start gap-4 sm:gap-5 z-10">
                     {/* Timeline Dot */}
                     <div className="flex items-center justify-center flex-shrink-0 pt-1.5">
                       <div className="w-2.5 h-2.5 rounded-full bg-[#580C1B] ring-2 ring-[#F2E9DC]" />
@@ -160,13 +210,13 @@ export default function ScheduleSection() {
                         </span>
                       )}
                     </div>
-                  </div>
+                  </motion.div>
                 )
               ))}
             </div>
 
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>
