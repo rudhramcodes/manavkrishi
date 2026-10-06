@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 export default function GallerySection({ onSelectPhoto }) {
   const sectionRef = useRef(null);
-  
+
   // Track scroll progress for the section
   // "start 50%" = top of section hits the middle of the viewport (animation starts late)
   // "center center" = center of section hits center of viewport
@@ -85,10 +85,10 @@ export default function GallerySection({ onSelectPhoto }) {
   // Variants for center typography
   const textVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.8, ease: "easeOut", staggerChildren: 0.2 } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut", staggerChildren: 0.2 }
     }
   };
 
@@ -99,7 +99,7 @@ export default function GallerySection({ onSelectPhoto }) {
       className="relative w-full min-h-[85vh] lg:min-h-screen py-16 sm:py-20 lg:py-24 px-4 sm:px-8 bg-[#F7EAD7] flex flex-col items-center justify-center overflow-hidden"
     >
       {/* Center Typography & Editorial Description */}
-      <motion.div 
+      <motion.div
         className="relative z-10 text-center max-w-sm sm:max-w-md mx-auto select-none px-4"
         initial="hidden"
         whileInView="visible"
@@ -133,13 +133,13 @@ export default function GallerySection({ onSelectPhoto }) {
             <motion.div
               key={item.id}
               className="absolute pointer-events-auto"
-              style={{ 
-                ...item.style, 
-                x: t.x, 
-                y: t.y, 
-                rotate: t.rotate, 
-                scale: t.scale, 
-                opacity: t.opacity 
+              style={{
+                ...item.style,
+                x: t.x,
+                y: t.y,
+                rotate: t.rotate,
+                scale: t.scale,
+                opacity: t.opacity
               }}
             >
               {/* Crisp White Polaroid Frame */}
@@ -161,39 +161,46 @@ export default function GallerySection({ onSelectPhoto }) {
       </div>
 
       {/* Mobile/Tablet View: Stagger Slide In */}
-      <motion.div 
+      <motion.div
         className="lg:hidden w-full mt-10 overflow-x-auto snap-x snap-mandatory flex gap-6 px-[15vw] sm:px-[25vw] pb-12 pt-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.4 }}
         variants={{
           hidden: {},
-          visible: { transition: { staggerChildren: 0.2, delayChildren: 0.4 } }
+          visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } }
         }}
       >
         {moments.map((item, idx) => {
           // Add subtle alternating rotation to give it a natural scattered feel
           const rotation = idx % 2 === 0 ? '-rotate-1' : 'rotate-1';
-          
+
           return (
-            <motion.div
+            <div
               key={item.id}
               className="flex-none w-[70vw] sm:w-[50vw] max-w-[280px] snap-center shrink-0 flex justify-center"
-              variants={{
-                hidden: { opacity: 0, x: 50, scale: 0.9 },
-                visible: { opacity: 1, x: 0, scale: 1, transition: { type: "spring", stiffness: 100, damping: 15 } }
-              }}
             >
               {/* Royal Vintage Polaroid Card */}
-              <div
+              <motion.div
                 onClick={() => onSelectPhoto && onSelectPhoto(item)}
-                className={`bg-[#FDFBF7] p-3 pb-4 sm:p-4 sm:pb-5 rounded-sm shadow-[0_15px_40px_rgba(71,1,1,0.18)] border border-[#E4E2B8]/80 cursor-pointer select-none w-full relative transform transition-transform duration-300 active:scale-95 ${rotation}`}
+                className={`bg-[#FDFBF7] p-3 pb-4 sm:p-4 sm:pb-5 rounded-sm shadow-[0_15px_40px_rgba(71,1,1,0.18)] border border-[#E4E2B8]/80 cursor-pointer select-none w-full relative ${rotation}`}
+                style={{ willChange: 'transform, opacity' }}
+                variants={{
+                  hidden: { opacity: 0, x: -150, scale: 0.95 },
+                  visible: { 
+                    opacity: 1, 
+                    x: 0, 
+                    scale: 1, 
+                    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } 
+                  }
+                }}
+                whileTap={{ scale: 0.95 }}
               >
                 {/* Top Pin */}
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
                   <img src="/images/pin.avif" alt="pin" className="w-8 h-8 drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
                 </div>
-                
+
                 {/* Photo */}
                 <div className="w-full aspect-[4/5] overflow-hidden bg-stone-200 relative z-10 border border-[#470101]/10">
                   <img
@@ -201,10 +208,10 @@ export default function GallerySection({ onSelectPhoto }) {
                     alt={item.alt}
                     className="w-full h-full object-cover object-center"
                   />
-                  {/* Vintage Warmth Overlay */}
-                  <div className="absolute inset-0 bg-[#E4E2B8]/10 mix-blend-overlay pointer-events-none" />
+                  {/* Vintage Warmth Overlay (mix-blend-overlay removed for smooth performance) */}
+                  <div className="absolute inset-0 bg-[#E4E2B8]/15 pointer-events-none" />
                 </div>
-                
+
                 {/* Bottom Numbering */}
                 <div className="mt-3 sm:mt-4 flex justify-center items-center gap-3">
                   <div className="w-6 h-[1px] bg-[#470101]/30"></div>
@@ -213,8 +220,8 @@ export default function GallerySection({ onSelectPhoto }) {
                   </span>
                   <div className="w-6 h-[1px] bg-[#470101]/30"></div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           );
         })}
       </motion.div>
