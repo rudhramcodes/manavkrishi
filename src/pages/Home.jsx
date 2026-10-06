@@ -7,6 +7,10 @@ import StorySection from '../components/sections/StorySection';
 import ScheduleSection from '../components/sections/ScheduleSection';
 import LocationSection from '../components/sections/LocationSection';
 import GallerySection from '../components/sections/GallerySection';
+import DressCodeSection from '../components/sections/DressCodeSection';
+import RsvpSection from '../components/sections/RsvpSection';
+import ClosingCardSection from '../components/sections/ClosingCardSection';
+import FaqSection from '../components/sections/FaqSection';
 import WishesSection from '../components/sections/WishesSection';
 import RsvpModal from '../components/ui/RsvpModal';
 import LightboxModal from '../components/ui/LightboxModal';
@@ -35,7 +39,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#2b0209] text-[#F7EAD7] font-inter relative selection:bg-[#F7EAD7] selection:text-[#470101]">
       {/* Floating Navbar matching reference image */}
-      <Navbar onOpenRsvp={() => setRsvpModalOpen(true)} />
+      <Navbar onOpenRsvp={() => {
+        const el = document.getElementById('rsvp');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          setRsvpModalOpen(true);
+        }
+      }} />
 
       {/* Main Content Sections */}
       <main>
@@ -45,6 +56,10 @@ export default function Home() {
         <LocationSection />
         <ScheduleSection />
         <GallerySection onSelectPhoto={setSelectedPhoto} />
+        <DressCodeSection />
+        <RsvpSection onAddWish={handleAddWish} />
+        <ClosingCardSection />
+        <FaqSection />
         {/* <WishesSection 
           wishes={wishes} 
           onOpenRsvp={() => setRsvpModalOpen(true)} 
@@ -52,7 +67,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      {/* <Footer /> */}
+      <Footer />
 
       {/* Modals & Floating Utilities */}
       <AudioToggle isPlaying={isPlaying} onToggle={toggleMusic} />
