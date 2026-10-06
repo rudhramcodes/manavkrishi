@@ -37,23 +37,23 @@ export default function Navbar({ onOpenRsvp }) {
           </nav>
 
           {/* Right Area: RSVP Button with increased width */}
-          <div className="flex-1 hidden md:flex justify-end">
+          {/* <div className="flex-1 hidden md:flex justify-end">
             <button
               onClick={onOpenRsvp}
               className="bg-[#E4E2B8] text-[#470101] text-xs font-semibold uppercase tracking-widest px-10 lg:px-12 py-2 md:py-2.5 transition-all duration-200 cursor-pointer shadow-sm text-center min-w-[130px] lg:min-w-[150px]"
             >
               RSVP
             </button>
-          </div>
+          </div> */}
 
           {/* Mobile Actions */}
           <div className="flex md:hidden items-center space-x-3">
-            <button
+            {/* <button
               onClick={onOpenRsvp}
               className="bg-[#E4E2B8] text-[#470101] text-[11px] font-bold uppercase tracking-wider px-4 py-1.5"
             >
               RSVP
-            </button>
+            </button> */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-[#E4E2B8] p-1.5 focus:outline-none"

@@ -30,12 +30,12 @@ END:VCALENDAR`;
 
   return (
     <section 
-      id="hero" 
+      id="hero"
       className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden pt-24 pb-12"
       style={{
-        backgroundImage: "url('/images/bg.avif')",
+        backgroundImage: "url('/images/bg3.avif')",
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: '35%',
         backgroundRepeat: 'no-repeat'
       }}
     >
@@ -43,10 +43,10 @@ END:VCALENDAR`;
       <div className="absolute inset-0 pointer-events-none" />
 
       {/* Ornate Golden Frame with Couple Photograph */}
-      <FrameCouple />
+      {/* <FrameCouple /> */}
 
       {/* Interlocking Golden Wedding Rings */}
-      <GoldenRings />
+      {/* <GoldenRings /> */}
 
       {/* Main Centerpiece Typography */}
       <div className="relative z-20 text-center max-w-4xl mx-auto px-4 flex flex-col items-center">
