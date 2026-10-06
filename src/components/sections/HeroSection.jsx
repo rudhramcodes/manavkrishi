@@ -32,12 +32,9 @@ END:VCALENDAR`;
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden pt-24 pb-12"
+      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden pt-24 pb-12 bg-cover bg-no-repeat bg-[77%] md:bg-[20%_40%]"
       style={{
-        backgroundImage: "url('/images/bg3.avif')",
-        backgroundSize: 'cover',
-        backgroundPosition: '35%',
-        backgroundRepeat: 'no-repeat'
+        backgroundImage: "url('/images/DSC08125.avif')"
       }}
     >
       {/* Background subtle vignette */}
