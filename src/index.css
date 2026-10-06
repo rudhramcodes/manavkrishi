@@ -25,4 +25,8 @@
 
 .font-luxurious {
   font-family: 'Luxurious Script', cursive;
+  overflow: visible !important;
+  display: inline-block;
+  padding: 0.2em;
+  margin: -0.2em;
 }

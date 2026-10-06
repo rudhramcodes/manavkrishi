@@ -37,6 +37,8 @@
   transform-style: preserve-3d;
   vertical-align: baseline;
   overflow: visible !important;
+  padding: 0.5em;
+  margin: -0.5em;
 }
 
 .fold-text-segment[data-fold-split='line'] {
@@ -49,10 +51,10 @@
   color: inherit;
   line-height: inherit;
   transform-style: preserve-3d;
-  backface-visibility: hidden;
+  /* backface-visibility: hidden; removed to stop Safari clipping */
   will-change: transform, opacity;
-  padding: 0.2em 0.1em;
-  margin: -0.2em -0.1em;
+  padding: 0.5em;
+  margin: -0.5em;
   overflow: visible !important;
 }
 
