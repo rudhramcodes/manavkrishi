@@ -57,7 +57,7 @@ export default function Home() {
         <ScheduleSection />
         <GallerySection onSelectPhoto={setSelectedPhoto} />
         <DressCodeSection />
-        <RsvpSection onAddWish={handleAddWish} />
+        {/* <RsvpSection onAddWish={handleAddWish} /> */}
         <ClosingCardSection />
         <FaqSection />
         {/* <WishesSection 

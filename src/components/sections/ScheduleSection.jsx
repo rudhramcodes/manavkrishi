@@ -4,31 +4,36 @@ import { Wine, Bell, UtensilsCrossed, Sparkles } from 'lucide-react';
 export default function ScheduleSection() {
   const events = [
     {
-      time: '16:00',
-      title: 'Arrival and Welcome',
+      isDate: true,
+      title: '13TH OCTOBER'
+    },
+    {
+      time: '12:00 PM onwards',
+      title: 'FIESTA DE AMOR',
+      subtitle: 'A Mexican Poolside Celebration',
       icon: <Wine className="w-4 h-4 text-[#C89B53]" />
     },
     {
-      time: '16:30',
-      title: 'Exchange of Vows',
-      icon: <Bell className="w-4 h-4 text-[#C89B53]" />
-    },
-    {
-      time: '17:00',
-      title: 'Wedding Dinner',
-      icon: <UtensilsCrossed className="w-4 h-4 text-[#C89B53]" />
-    },
-    {
-      time: '17:30',
-      title: 'Celebration and Dancing',
+      time: '8:00 PM onwards',
+      title: 'AFTER DARK',
+      subtitle: 'An After-Hours Celebration',
       icon: <Sparkles className="w-4 h-4 text-[#C89B53]" />
+    },
+    {
+      isDate: true,
+      title: '14TH OCTOBER'
+    },
+    {
+      time: '11:00 AM onwards',
+      title: 'THE ENGAGEMENT',
+      icon: <Bell className="w-4 h-4 text-[#C89B53]" />
     }
   ];
 
   return (
     <section
       id="schedule"
-      className="relative w-full min-h-[90vh] md:min-h-screen py-20 sm:py-28 md:py-32 px-6 sm:px-12 bg-[#520917] flex items-center justify-center overflow-hidden"
+      className="relative w-full py-16 sm:py-20 md:py-24 px-6 sm:px-12 bg-[#520917] flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: 'radial-gradient(ellipse 90% 70% at 30% 40%, #680E1F 0%, #460612 100%)',
       }}
@@ -118,31 +123,45 @@ export default function ScheduleSection() {
 
               {/* Continuous vertical connector line */}
               <div
-                className="absolute left-[17px] sm:left-[21px] top-3.5 bottom-12 w-[1px] bg-[#D4C3AF] pointer-events-none"
+                className="absolute left-[17px] sm:left-[21px] top-4 bottom-0 w-[1px] bg-[#D4C3AF] pointer-events-none"
               />
 
               {events.map((event, idx) => (
-                <div key={idx} className="relative flex items-start gap-4 sm:gap-5 z-10">
-
-                  {/* Timeline Dot */}
-                  <div className="flex items-center justify-center flex-shrink-0 pt-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#580C1B] ring-2 ring-[#F2E9DC]" />
-                  </div>
-
-                  {/* Content: Icon + Time + Title */}
-                  <div className="flex flex-col text-left">
-                    <div className="flex items-center gap-2 mb-1">
-                      {event.icon}
-                      <span className="font-instrument text-2xl sm:text-3xl text-[#580C1B] leading-none">
-                        {event.time}
-                      </span>
+                event.isDate ? (
+                  <div key={idx} className="relative flex items-center gap-4 sm:gap-5 z-10 pt-2 pb-1">
+                    <div className="flex items-center justify-center flex-shrink-0">
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#C89B53] ring-2 ring-[#F2E9DC]" />
                     </div>
-                    <span className="font-inter text-xs sm:text-[13px] text-[#580C1B] font-normal leading-snug">
+                    <span className="font-instrument text-2xl sm:text-3xl text-[#580C1B] leading-none uppercase tracking-wide">
                       {event.title}
                     </span>
                   </div>
+                ) : (
+                  <div key={idx} className="relative flex items-start gap-4 sm:gap-5 z-10">
+                    {/* Timeline Dot */}
+                    <div className="flex items-center justify-center flex-shrink-0 pt-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#580C1B] ring-2 ring-[#F2E9DC]" />
+                    </div>
 
-                </div>
+                    {/* Content: Icon + Time + Title */}
+                    <div className="flex flex-col text-left">
+                      <div className="flex items-center gap-2 mb-1">
+                        {event.icon}
+                        <span className="font-instrument text-[19px] sm:text-[21px] text-[#580C1B] leading-none">
+                          {event.time}
+                        </span>
+                      </div>
+                      <span className="font-instrument text-sm sm:text-base font-normal text-[#580C1B] leading-snug">
+                        {event.title}
+                      </span>
+                      {event.subtitle && (
+                        <span className="font-inter text-[11.5px] sm:text-xs text-[#580C1B]/80 font-medium leading-snug mt-1 italic tracking-tight">
+                          {event.subtitle}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                )
               ))}
             </div>
 

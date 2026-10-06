@@ -1,16 +1,42 @@
 import React from 'react';
 
-const WOMEN_PALETTE = [
-  { name: 'Velvet Burgundy', hex: '#690001' },
-  { name: 'Warm Champagne', hex: '#DDC09D' },
-  { name: 'Soft Ivory', hex: '#F9F3E9' },
-  { name: 'Dusty Rose', hex: '#C36B78' },
-];
-
-const MEN_PALETTE = [
-  { name: 'Classic Black', hex: '#000000' },
-  { name: 'Charcoal Grey', hex: '#303030' },
-  { name: 'Espresso Brown', hex: '#412414' },
+const LOOKBOOK_DATA = [
+  {
+    id: 'engagement',
+    event: 'THE ENGAGEMENT',
+    rule: 'PASTELS ONLY',
+    description: 'Soft pastels, elegant silhouettes.',
+    palette: [
+      { name: 'Blush Pink', hex: '#F9E0E3' },
+      { name: 'Mint Green', hex: '#E2F0CB' },
+      { name: 'Powder Blue', hex: '#B5D3E7' },
+      { name: 'Soft Lavender', hex: '#E6E6FA' }
+    ]
+  },
+  {
+    id: 'after-dark',
+    event: 'AFTER DARK',
+    rule: 'MAXIMUM BLING',
+    description: 'More sparkle, more glamour.',
+    palette: [
+      { name: 'Onyx Black', hex: '#1A1A1A' },
+      { name: 'Silver Shimmer', hex: '#C0C0C0' },
+      { name: 'Gold Glitz', hex: '#D4AF37' },
+      { name: 'Midnight Navy', hex: '#192841' }
+    ]
+  },
+  {
+    id: 'fiesta',
+    event: 'FIESTA DE AMOR',
+    rule: 'THE BRIGHTER, THE BETTER',
+    description: 'Bold colours, festive energy.',
+    palette: [
+      { name: 'Vibrant Red', hex: '#E3242B' },
+      { name: 'Sunny Yellow', hex: '#FFD700' },
+      { name: 'Tropical Teal', hex: '#008080' },
+      { name: 'Hot Magenta', hex: '#FF00FF' }
+    ]
+  }
 ];
 
 export default function DressCodeSection() {
@@ -19,137 +45,65 @@ export default function DressCodeSection() {
       id="dress-code"
       className="relative w-full bg-[#580C1B] text-[#F7EAD7] py-20 sm:py-24 md:py-28 lg:py-32 px-5 sm:px-8 md:px-12 lg:px-16 overflow-hidden selection:bg-[#F7EAD7] selection:text-[#580C1B]"
     >
-      <div className="max-w-[1180px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-10 lg:gap-16 items-start">
-          
-          {/* ================= LEFT COLUMN ================= */}
-          <div className="flex flex-col items-center md:items-start w-full">
-            {/* Header: Dress Code & Subtitle */}
-            <div className="text-center md:text-left mb-6 sm:mb-8 md:mb-10">
-              <h2 className="text-[#F7EAD7] flex items-baseline justify-center md:justify-start flex-wrap select-none leading-none">
-                <span className="inline-flex items-baseline mr-3 sm:mr-4">
-                  <span className="font-luxurious text-6xl sm:text-7xl md:text-[80px] lg:text-[88px] leading-none">
-                    D
-                  </span>
-                  <span className="font-instrument text-5xl sm:text-6xl md:text-[70px] lg:text-[78px] leading-none">
-                    ress
-                  </span>
-                </span>
-                <span className="inline-flex items-baseline">
-                  <span className="font-luxurious text-6xl sm:text-7xl md:text-[80px] lg:text-[88px] leading-none">
-                    C
-                  </span>
-                  <span className="font-instrument not-italic text-4xl sm:text-5xl md:text-[54px] lg:text-[60px] font-normal leading-none -ml-0.5">
-                    ode
-                  </span>
-                </span>
-              </h2>
-              <p className="mt-2 sm:mt-3 text-[#F7EAD7]/90 text-sm sm:text-base md:text-[17px] font-inter font-normal tracking-tight">
-                A Palette For The Evening
-              </p>
-            </div>
+      <div className="max-w-6xl mx-auto flex flex-col items-center">
+        
+        {/* Header: The Lookbook */}
+        <div className="text-center mb-16 sm:mb-20 md:mb-24">
+          <h2 className="text-[#F7EAD7] flex items-baseline justify-center select-none leading-none">
+            {/* <span className="font-luxurious text-6xl sm:text-7xl md:text-[80px] lg:text-[88px] leading-none -mr-1">
+              T
+            </span>
+            <span className="font-instrument text-4xl sm:text-5xl md:text-[54px] lg:text-[60px] font-normal leading-none pr-3 sm:pr-4 tracking-wide uppercase">
+              HE
+            </span> */}
+            <span className="font-luxurious text-6xl sm:text-7xl md:text-[80px] lg:text-[88px] leading-none -mr-1">
+              L
+            </span>
+            <span className="font-instrument text-4xl sm:text-5xl md:text-[54px] lg:text-[60px] font-normal leading-none tracking-wide uppercase">
+              OOKBOOK
+            </span>
+          </h2>
+          <p className="mt-4 sm:mt-5 text-[#F7EAD7]/80 text-sm sm:text-base md:text-lg font-inter font-normal tracking-tight">
+            A Palette For Every Celebration
+          </p>
+        </div>
 
-            {/* Left Frame: Women / Bridesmaids */}
-            <div className="w-full max-w-[360px] sm:max-w-[400px] md:max-w-[430px] lg:max-w-[470px] mx-auto md:mx-0">
-              {/* Ornate Frame Container */}
-              <div className="relative w-full aspect-square select-none">
-                {/* Photo inside the transparent aperture cutout of frame3 */}
-                <div 
-                  className="absolute overflow-hidden"
-                  style={{
-                    left: '15.33%',
-                    top: '29.20%',
-                    width: '69.24%',
-                    height: '42.29%',
-                    zIndex: 1
-                  }}
-                >
-                  <img
-                    src="/images/dress_women_fit.jpg"
-                    alt="Women Dress Code Palette"
-                    className="w-full h-full object-cover object-[center_35%] transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-
-                {/* Baroque Gold Ornate Frame Overlay */}
-                <img
-                  src="/images/frame3.avif"
-                  alt="Golden Frame"
-                  className="absolute inset-0 w-full h-full object-contain pointer-events-none drop-shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
-                  style={{ zIndex: 2 }}
-                />
-              </div>
-
-              {/* 4 Color Swatches for Women */}
-              <div className="flex items-center justify-center gap-3 sm:gap-3.5 mt-5 sm:mt-6">
-                {WOMEN_PALETTE.map((swatch, idx) => (
-                  <div
-                    key={idx}
-                    title={swatch.name}
-                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 border border-[#F7EAD7]/40 shadow-sm transition-transform duration-200 hover:scale-110 cursor-pointer"
-                    style={{ backgroundColor: swatch.hex }}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-
-
-          {/* ================= RIGHT COLUMN ================= */}
-          <div className="flex flex-col items-center md:items-end w-full md:-mt-8 lg:-mt-12">
-            {/* Right Frame: Men / Groomsmen (staggered higher up) */}
-            <div className="w-full max-w-[360px] sm:max-w-[400px] md:max-w-[430px] lg:max-w-[470px] mx-auto md:mr-0 md:ml-auto">
-              {/* Ornate Frame Container */}
-              <div className="relative w-full aspect-square select-none">
-                {/* Photo inside the transparent aperture cutout of frame3 */}
-                <div 
-                  className="absolute overflow-hidden"
-                  style={{
-                    left: '15.33%',
-                    top: '29.20%',
-                    width: '69.24%',
-                    height: '42.29%',
-                    zIndex: 1
-                  }}
-                >
-                  <img
-                    src="/images/dress_men_fit.jpg"
-                    alt="Men Dress Code Palette"
-                    className="w-full h-full object-cover object-[center_28%] transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-
-                {/* Baroque Gold Ornate Frame Overlay */}
-                <img
-                  src="/images/frame3.avif"
-                  alt="Golden Frame"
-                  className="absolute inset-0 w-full h-full object-contain pointer-events-none drop-shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
-                  style={{ zIndex: 2 }}
-                />
-              </div>
-
-              {/* 3 Color Swatches for Men */}
-              <div className="flex items-center justify-center gap-3 sm:gap-3.5 mt-5 sm:mt-6">
-                {MEN_PALETTE.map((swatch, idx) => (
-                  <div
-                    key={idx}
-                    title={swatch.name}
-                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 border border-[#F7EAD7]/40 shadow-sm transition-transform duration-200 hover:scale-110 cursor-pointer"
-                    style={{ backgroundColor: swatch.hex }}
-                  />
-                ))}
-              </div>
-
-              {/* Note: Kindly Avoid White, That Seat Is Already Taken */}
-              <div className="mt-10 sm:mt-12 md:mt-14 text-center md:text-right w-full pr-0 md:pr-4">
-                <p className="font-inter text-sm sm:text-[15px] md:text-base text-[#F7EAD7] font-normal leading-relaxed tracking-tight">
-                  Kindly Avoid White, That Seat<br className="hidden sm:inline" /> Is Already Taken
+        {/* 3 Column Grid for Events */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-12">
+          {LOOKBOOK_DATA.map((item) => (
+            <div key={item.id} className="flex flex-col items-center text-center group">
+              
+              {/* Event Name */}
+              <h3 className="font-instrument text-3xl sm:text-4xl text-[#F7EAD7] mb-3 tracking-wide">
+                {item.event}
+              </h3>
+              
+              {/* Rule & Description */}
+              <div className="mb-8">
+                <p className="font-inter text-sm sm:text-[15px] font-bold tracking-widest uppercase mb-1.5 text-[#C89B53]">
+                  {item.rule}
+                </p>
+                <p className="font-inter text-[13px] sm:text-sm text-[#F7EAD7]/80 font-normal leading-relaxed">
+                  {item.description}
                 </p>
               </div>
-            </div>
-          </div>
 
+              {/* Color Swatches */}
+              <div className="flex items-center justify-center gap-3 sm:gap-4 mt-auto pb-4">
+                {item.palette.map((swatch, idx) => (
+                  <div
+                    key={idx}
+                    title={swatch.name}
+                    className="w-10 h-10 sm:w-12 sm:h-12 border-2 border-[#F7EAD7]/20 rounded-full shadow-lg transition-all duration-300 cursor-pointer"
+                    style={{ backgroundColor: swatch.hex }}
+                  />
+                ))}
+              </div>
+              
+            </div>
+          ))}
         </div>
+
       </div>
     </section>
   );

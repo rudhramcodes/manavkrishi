@@ -41,19 +41,25 @@ export default function LocationSection() {
         <div className="flex flex-col items-center justify-center text-center max-w-sm sm:max-w-md">
           
           {/* Section Heading: "Location" */}
-          <h2 className="flex items-baseline justify-center text-[#580C1B] leading-none mb-4 sm:mb-5 select-none">
+          <h2 className="flex items-baseline justify-center text-[#580C1B] leading-none mb-3 sm:mb-4 select-none">
             <span className="font-luxurious text-6xl sm:text-7xl md:text-8xl -mr-1">L</span>
             <span className="font-instrument text-4xl sm:text-5xl md:text-6xl tracking-wide">ocation</span>
           </h2>
 
+          {/* Venue Name */}
+          <h3 className="font-instrument text-2xl sm:text-3xl text-[#580C1B] mb-4 sm:mb-5 tracking-wide uppercase">
+            Avadh Utopia, Vapi
+          </h3>
+
+          
           {/* Location Description */}
           <p className="font-inter text-[#580C1B] text-sm sm:text-base leading-snug font-normal max-w-[280px] sm:max-w-[320px] text-center mb-6 sm:mb-8">
-            Join Us At St. Mary's Chapel On Blessing Lane For Our Wedding Ceremony.
+            Join us for an afternoon of celebration, elegance and cherished moments.
           </p>
 
           {/* "View in google map" Button */}
           <a
-            href="https://maps.google.com/?q=St.+Mary's+Chapel+Blessing+Lane"
+            href="https://maps.google.com/?q=Avadh+Utopia,+Vapi"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-[#580C1B] hover:bg-[#470101] text-white font-inter text-xs sm:text-[13px] font-medium tracking-normal px-7 sm:px-8 py-2.5 sm:py-3 transition-colors duration-200 cursor-pointer"

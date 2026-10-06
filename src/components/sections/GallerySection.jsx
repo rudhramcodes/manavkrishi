@@ -65,7 +65,7 @@ export default function GallerySection({ onSelectPhoto }) {
 
         {/* Description */}
         <p className="font-inter text-[#580C1B] text-xs sm:text-[13px] md:text-sm leading-snug font-normal max-w-[290px] sm:max-w-[340px] mx-auto text-center opacity-90">
-          A small collection of memories before the wedding day the glances, journeys, and quiet celebrations that shaped everything they are about to begin.
+          A small collection of memories before the engagement day the glances, journeys, and quiet celebrations that shaped everything they are about to begin.
         </p>
 
       </div>
@@ -75,7 +75,7 @@ export default function GallerySection({ onSelectPhoto }) {
         {moments.map((item) => (
           <div
             key={item.id}
-            className="absolute pointer-events-auto transition-transform duration-300 hover:scale-105 hover:z-30"
+            className="absolute pointer-events-auto transition-transform duration-300"
             style={item.style}
           >
             {/* Crisp White Polaroid Frame */}

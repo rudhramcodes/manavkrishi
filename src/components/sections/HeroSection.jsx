@@ -53,12 +53,12 @@ END:VCALENDAR`;
         
         {/* Subtitle */}
         <p className="font-instrument text-2xl sm:text-3xl md:text-4xl text-[#E4E2B8] mb-2 font-normal drop-shadow-md">
-          Engagement Day
+          An Engagement Celebration
         </p>
 
         {/* Date */}
-        <p className="font-inter text-xl sm:text-2xl md:text-3xl text-[#E4E2B8] tracking-wide mb-4 sm:mb-6 font-normal drop-shadow-sm">
-          14-10-2026
+        <p className="font-inter text-lg sm:text-xl md:text-2xl text-[#E4E2B8] tracking-wide mb-4 sm:mb-6 font-normal drop-shadow-sm">
+          14 OCTOBER 2026
         </p>
 
         {/* Groom & Bride Names with Luxurious Script First Letters */}
@@ -94,26 +94,10 @@ END:VCALENDAR`;
 
         {/* Status Tagline */}
         <div className="mt-4 sm:mt-6">
-          <p className="font-instrument uppercase text-sm sm:text-base md:text-lg tracking-[0.35em] text-[#E4E2B8] font-normal opacity-90 drop-shadow-sm">
-            are getting engaged
+          <p className="font-inter text-sm sm:text-base md:text-lg tracking-tight text-[#E4E2B8] font-normal">
+            A morning of love, <br /> legacy & new beginnings.
           </p>
         </div>
-
-        {/* Countdown Timer Strip */}
-        {/* <div className="mt-8 sm:mt-10">
-          <CountdownTimer />
-        </div> */}
-
-        {/* Action Buttons */}
-        {/* <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-          <button
-            onClick={downloadCalendarFile}
-            className="inline-flex items-center gap-2 text-xs sm:text-sm tracking-wider uppercase bg-[#E4E2B8]/10 hover:bg-[#E4E2B8] text-[#E4E2B8] hover:text-[#470101] border border-[#E4E2B8]/40 px-5 py-2.5 transition-all duration-300 font-medium cursor-pointer"
-          >
-            <Calendar className="w-4 h-4" />
-            Save The Date (.ICS)
-          </button>
-        </div> */}
 
       </div>
 
