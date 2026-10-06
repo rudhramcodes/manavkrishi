@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, ChevronDown } from 'lucide-react';
+import FoldText from '../ui/FoldText';
 import { COUPLE_DATA } from '../../data/invitationData';
 import FrameCouple from '../ui/FrameCouple';
 import GoldenRings from '../ui/GoldenRings';
@@ -29,7 +30,7 @@ END:VCALENDAR`;
   };
 
   return (
-    <section 
+    <section
       id="hero"
       className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden pt-24 pb-12"
       style={{
@@ -50,7 +51,7 @@ END:VCALENDAR`;
 
       {/* Main Centerpiece Typography */}
       <div className="relative z-20 text-center max-w-4xl mx-auto px-4 flex flex-col items-center">
-        
+
         {/* Subtitle */}
         <p className="font-instrument text-2xl sm:text-3xl md:text-4xl text-[#E4E2B8] mb-2 font-normal drop-shadow-md">
           An Engagement Celebration
@@ -63,31 +64,35 @@ END:VCALENDAR`;
 
         {/* Groom & Bride Names with Luxurious Script First Letters */}
         <div className="my-2 sm:my-3 flex flex-col gap-5 items-center justify-center select-none">
-          
+
           {/* Manav & */}
-          <div className="flex items-baseline justify-center gap-4 md:gap-8 tracking-tight leading-none">
-            <span 
-              className="font-luxurious text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] text-[#E4E2B8] leading-none -mr-2 sm:-mr-4 md:-mr-6 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+          <div className="flex items-baseline justify-center gap-4 md:gap-8 tracking-tighter leading-none">
+            <FoldText 
+              text="M"
+              className="font-luxurious text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] text-[#E4E2B8] leading-none -mr-2 sm:-mr-4 md:-mr-6"
               style={{ lineHeight: '0.75' }}
-            >
-              M
-            </span>
-            <span className="font-instrument uppercase text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] text-[#E4E2B8] font-normal tracking-[0.08em] drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
-              anav &
-            </span>
+              splitBy="char" hinge="bottom" duration={1.2} stagger={0.08}
+            />
+            <FoldText 
+              text="anav &"
+              className="font-instrument uppercase text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] text-[#E4E2B8] font-normal tracking-tighter"
+              splitBy="char" hinge="bottom" duration={1} stagger={0.05}
+            />
           </div>
 
           {/* Krishi */}
-          <div className="flex items-baseline justify-center gap-3 md:gap-8 tracking-tight leading-none -mt-4 sm:-mt-6 md:-mt-8">
-            <span 
-              className="font-luxurious text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] text-[#E4E2B8] leading-none -mr-1 sm:-mr-3 md:-mr-4 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+          <div className="flex items-baseline justify-center gap-3 md:gap-8 tracking-tighter leading-none -mt-4 sm:-mt-6 md:-mt-8">
+            <FoldText 
+              text="K"
+              className="font-luxurious text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] text-[#E4E2B8] leading-none -mr-1 sm:-mr-3 md:-mr-4 tracking-tighter"
               style={{ lineHeight: '0.75' }}
-            >
-              K
-            </span>
-            <span className="font-instrument uppercase text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] text-[#E4E2B8] font-normal tracking-[0.08em] drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
-              rishi
-            </span>
+              splitBy="char" hinge="bottom" duration={1.2} stagger={0.08}
+            />
+            <FoldText 
+              text="rishi"
+              className="font-instrument uppercase text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] text-[#E4E2B8] font-normal tracking-tighter"
+              splitBy="char" hinge="bottom" duration={1} stagger={0.05}
+            />
           </div>
 
         </div>
@@ -102,8 +107,8 @@ END:VCALENDAR`;
       </div>
 
       {/* Scroll Down Indicator */}
-      <a 
-        href="#details" 
+      <a
+        href="#details"
         className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center text-[#E4E2B8]/70 hover:text-[#E4E2B8] transition-colors duration-200 cursor-pointer"
         aria-label="Scroll down"
       >

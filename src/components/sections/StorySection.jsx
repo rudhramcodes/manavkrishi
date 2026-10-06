@@ -1,9 +1,22 @@
-import React from 'react';
+
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function StorySection() {
+  const sectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Moves the pin down slightly as you scroll down, creating parallax
+  const pinY = useTransform(scrollYProgress, [0, 1], [-40, 40]);
+
   return (
     <section
       id="story"
+      ref={sectionRef}
       className="relative w-full py-20 sm:py-24 md:py-28 lg:py-32 flex items-center justify-center overflow-hidden"
     >
       {/* Background Wedding Couple Image (bg3.avif) */}
@@ -27,12 +40,13 @@ export default function StorySection() {
           className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.6)] select-none pointer-events-none"
         />
 
-        {/* Top Wax Seal Pin */}
-        <div
+        {/* Top Wax Seal Pin with Parallax */}
+        <motion.div
           className="absolute left-1/2 -translate-x-1/2 z-20 pointer-events-none select-none"
           style={{
             top: '-10%',
             width: '26%',
+            y: pinY
           }}
         >
           <img
@@ -40,7 +54,7 @@ export default function StorySection() {
             alt="Wax Seal"
             className="w-full h-auto drop-shadow-[0_8px_18px_rgba(0,0,0,0.5)]"
           />
-        </div>
+        </motion.div>
 
         {/* Content Centered on the Paper */}
         <div className="absolute inset-0 flex flex-col items-center justify-center px-6 xs:px-7 sm:px-10 md:px-12 lg:px-14 pt-6 sm:pt-8 md:pt-10 pb-6 sm:pb-10 md:pb-12 text-center">
