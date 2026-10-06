@@ -1,44 +1,52 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 export default function GallerySection({ onSelectPhoto }) {
   const sectionRef = useRef(null);
   
   // Track scroll progress for the section
-  // "start end" = top of section hits bottom of viewport
+  // "start 50%" = top of section hits the middle of the viewport (animation starts late)
   // "center center" = center of section hits center of viewport
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "center center"]
+    offset: ["start 50%", "center center"]
+  });
+
+  // Add buttery smooth spring physics to the scroll progress
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 50,
+    damping: 15,
+    mass: 1,
+    restDelta: 0.001
   });
 
   // Scroll-driven transforms for Photo 1 (Top Left)
-  const x1 = useTransform(scrollYProgress, [0, 1], ['35vw', '0vw']);
-  const y1 = useTransform(scrollYProgress, [0, 1], ['30vh', '0vh']);
-  const r1 = useTransform(scrollYProgress, [0, 1], [0, -8]);
-  const s1 = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
-  const o1 = useTransform(scrollYProgress, [0, 0.1, 1], [0, 1, 1]);
+  const x1 = useTransform(smoothProgress, [0, 1], ['35vw', '0vw']);
+  const y1 = useTransform(smoothProgress, [0, 1], ['30vh', '0vh']);
+  const r1 = useTransform(smoothProgress, [0, 1], [0, -8]);
+  const s1 = useTransform(smoothProgress, [0, 1], [0.3, 1]);
+  const o1 = useTransform(smoothProgress, [0, 0.1, 1], [0, 1, 1]);
 
   // Scroll-driven transforms for Photo 2 (Top Right)
-  const x2 = useTransform(scrollYProgress, [0, 1], ['-35vw', '0vw']);
-  const y2 = useTransform(scrollYProgress, [0, 1], ['35vh', '0vh']);
-  const r2 = useTransform(scrollYProgress, [0, 1], [0, -7]);
-  const s2 = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
-  const o2 = useTransform(scrollYProgress, [0, 0.1, 1], [0, 1, 1]);
+  const x2 = useTransform(smoothProgress, [0, 1], ['-35vw', '0vw']);
+  const y2 = useTransform(smoothProgress, [0, 1], ['35vh', '0vh']);
+  const r2 = useTransform(smoothProgress, [0, 1], [0, -7]);
+  const s2 = useTransform(smoothProgress, [0, 1], [0.3, 1]);
+  const o2 = useTransform(smoothProgress, [0, 0.1, 1], [0, 1, 1]);
 
   // Scroll-driven transforms for Photo 3 (Bottom Left)
-  const x3 = useTransform(scrollYProgress, [0, 1], ['35vw', '0vw']);
-  const y3 = useTransform(scrollYProgress, [0, 1], ['-30vh', '0vh']);
-  const r3 = useTransform(scrollYProgress, [0, 1], [0, -5]);
-  const s3 = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
-  const o3 = useTransform(scrollYProgress, [0, 0.1, 1], [0, 1, 1]);
+  const x3 = useTransform(smoothProgress, [0, 1], ['35vw', '0vw']);
+  const y3 = useTransform(smoothProgress, [0, 1], ['-30vh', '0vh']);
+  const r3 = useTransform(smoothProgress, [0, 1], [0, -5]);
+  const s3 = useTransform(smoothProgress, [0, 1], [0.3, 1]);
+  const o3 = useTransform(smoothProgress, [0, 0.1, 1], [0, 1, 1]);
 
   // Scroll-driven transforms for Photo 4 (Bottom Right)
-  const x4 = useTransform(scrollYProgress, [0, 1], ['-35vw', '0vw']);
-  const y4 = useTransform(scrollYProgress, [0, 1], ['-30vh', '0vh']);
-  const r4 = useTransform(scrollYProgress, [0, 1], [0, 6]);
-  const s4 = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
-  const o4 = useTransform(scrollYProgress, [0, 0.1, 1], [0, 1, 1]);
+  const x4 = useTransform(smoothProgress, [0, 1], ['-35vw', '0vw']);
+  const y4 = useTransform(smoothProgress, [0, 1], ['-30vh', '0vh']);
+  const r4 = useTransform(smoothProgress, [0, 1], [0, 6]);
+  const s4 = useTransform(smoothProgress, [0, 1], [0.3, 1]);
+  const o4 = useTransform(smoothProgress, [0, 0.1, 1], [0, 1, 1]);
 
   const desktopTransforms = [
     { x: x1, y: y1, rotate: r1, scale: s1, opacity: o1 },
@@ -92,7 +100,7 @@ export default function GallerySection({ onSelectPhoto }) {
     >
       {/* Center Typography & Editorial Description */}
       <motion.div 
-        className="z-10 text-center max-w-sm sm:max-w-md mx-auto select-none px-4"
+        className="relative z-10 text-center max-w-sm sm:max-w-md mx-auto select-none px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
@@ -118,7 +126,7 @@ export default function GallerySection({ onSelectPhoto }) {
       </motion.div>
 
       {/* Desktop View: Scroll-Driven Center Scatter */}
-      <div className="hidden lg:block absolute inset-0 pointer-events-none w-full h-full">
+      <div className="hidden lg:block absolute inset-0 pointer-events-none w-full h-full z-20">
         {moments.map((item, idx) => {
           const t = desktopTransforms[idx];
           return (
