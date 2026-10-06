@@ -20,7 +20,7 @@ export default function StorySection() {
       className="relative w-full py-20 sm:py-24 md:py-28 lg:py-32 flex items-center justify-center overflow-hidden"
     >
       {/* Background Wedding Couple Image (bg3.avif) */}
-      <div
+      <div  
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/images/bg3.avif')",
@@ -42,17 +42,17 @@ export default function StorySection() {
 
         {/* Top Wax Seal Pin with Parallax */}
         <motion.div
-          className="absolute left-1/2 -translate-x-1/2 z-20 pointer-events-none select-none"
+          className="absolute left-1/2 -translate-x-1/2 z-20 pointer-events-none select-none p-2"
           style={{
             top: '-10%',
-            width: '26%',
+            width: '30%', // Slightly larger to compensate for padding
             y: pinY
           }}
         >
           <img
             src="/images/pin.avif"
             alt="Wax Seal"
-            className="w-full h-auto drop-shadow-[0_8px_18px_rgba(0,0,0,0.5)]"
+            className="w-full h-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.4)]"
           />
         </motion.div>
 
