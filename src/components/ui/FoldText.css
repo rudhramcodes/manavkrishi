@@ -2,6 +2,7 @@
   display: inline-block;
   white-space: pre-wrap;
   user-select: text;
+  overflow: visible !important;
 }
 
 .fold-text-sr-only {
@@ -18,6 +19,7 @@
 
 .fold-text-visual {
   display: inline;
+  overflow: visible !important;
 }
 
 .fold-text-line {
@@ -34,6 +36,7 @@
   perspective: var(--fold-perspective, 700px);
   transform-style: preserve-3d;
   vertical-align: baseline;
+  overflow: visible !important;
 }
 
 .fold-text-segment[data-fold-split='line'] {
@@ -50,6 +53,7 @@
   will-change: transform, opacity;
   padding: 0.2em 0.1em;
   margin: -0.2em -0.1em;
+  overflow: visible !important;
 }
 
 .fold-text-piece::after {

@@ -66,31 +66,31 @@ END:VCALENDAR`;
         <div className="my-2 sm:my-3 flex flex-col gap-5 items-center justify-center select-none">
 
           {/* Manav & */}
-          <div className="flex items-baseline justify-center gap-4 md:gap-8 tracking-tighter leading-none">
+          <div className="flex items-baseline justify-center gap-4 md:gap-8 tracking-tighter leading-none !overflow-visible">
             <FoldText 
               text="M"
-              className="font-luxurious text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] text-[#E4E2B8] leading-none -mr-2 sm:-mr-4 md:-mr-6"
+              className="font-luxurious text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] text-[#E4E2B8] leading-none -mr-2 sm:-mr-4 md:-mr-6 !overflow-visible"
               style={{ lineHeight: '0.75' }}
               splitBy="char" hinge="bottom" duration={1.2} stagger={0.08}
             />
             <FoldText 
               text="anav &"
-              className="font-instrument uppercase text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] text-[#E4E2B8] font-normal tracking-tighter"
+              className="font-instrument uppercase text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] text-[#E4E2B8] font-normal tracking-tighter !overflow-visible"
               splitBy="char" hinge="bottom" duration={1} stagger={0.05}
             />
           </div>
 
           {/* Krishi */}
-          <div className="flex items-baseline justify-center gap-3 md:gap-8 tracking-tighter leading-none -mt-4 sm:-mt-6 md:-mt-8">
+          <div className="flex items-baseline justify-center gap-3 md:gap-8 tracking-tighter leading-none -mt-4 sm:-mt-6 md:-mt-8 !overflow-visible">
             <FoldText 
               text="K"
-              className="font-luxurious text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] text-[#E4E2B8] leading-none -mr-1 sm:-mr-3 md:-mr-4 tracking-tighter"
+              className="font-luxurious text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] text-[#E4E2B8] leading-none -mr-1 sm:-mr-3 md:-mr-4 tracking-tighter !overflow-visible"
               style={{ lineHeight: '0.75' }}
               splitBy="char" hinge="bottom" duration={1.2} stagger={0.08}
             />
             <FoldText 
               text="rishi"
-              className="font-instrument uppercase text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] text-[#E4E2B8] font-normal tracking-tighter"
+              className="font-instrument uppercase text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] text-[#E4E2B8] font-normal tracking-tighter !overflow-visible"
               splitBy="char" hinge="bottom" duration={1} stagger={0.05}
             />
           </div>
