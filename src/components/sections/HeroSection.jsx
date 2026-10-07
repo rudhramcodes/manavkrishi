@@ -47,26 +47,29 @@ END:VCALENDAR`;
       {/* <GoldenRings /> */}
 
       {/* Main Centerpiece Typography */}
-      <div className="relative z-20 text-center max-w-4xl mx-auto px-4 flex flex-col items-center">
+      <div className="relative z-20 text-center w-full flex-1 md:flex-none max-w-4xl mx-auto px-4 flex flex-col items-center justify-between md:justify-center pb-8 md:pb-0">
 
-        {/* Subtitle */}
-        <p className="font-instrument text-2xl sm:text-3xl md:text-4xl text-[#E4E2B8] mb-2 font-normal drop-shadow-md">
-          An Engagement Celebration
-        </p>
+        {/* Top Group for Mobile: Subtitle & Date */}
+        <div className="flex flex-col items-center justify-start mt-4 md:mt-0">
+          {/* Subtitle */}
+          <p className="font-instrument text-2xl sm:text-3xl md:text-4xl text-[#E4E2B8] mb-2 font-normal drop-shadow-md">
+            An Engagement Celebration
+          </p>
 
-        {/* Date */}
-        <p className="font-inter text-lg sm:text-xl md:text-2xl text-[#E4E2B8] tracking-wide mb-4 sm:mb-6 font-normal drop-shadow-sm">
-          14 OCTOBER 2026
-        </p>
+          {/* Date */}
+          <p className="font-inter text-lg sm:text-xl md:text-2xl text-[#E4E2B8] tracking-wide mb-0 md:mb-6 font-normal drop-shadow-sm">
+            14 OCTOBER 2026
+          </p>
+        </div>
 
         {/* Groom & Bride Names with Luxurious Script First Letters */}
-        <div className="my-2 sm:my-3 flex flex-col gap-5 items-center justify-center select-none">
+        <div className="flex-1 md:flex-none flex flex-col justify-center items-center my-2 sm:my-3 gap-5 select-none -mt-10 md:mt-0">
 
           {/* Manav & */}
-          <div className="flex items-baseline justify-center gap-4 md:gap-8 tracking-tighter leading-none !overflow-visible">
+          <div className="flex items-baseline justify-center gap-0 md:gap-2 tracking-tighter leading-none !overflow-visible">
             <FoldText
               text="M"
-              className="font-luxurious text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] text-[#E4E2B8] leading-none -mr-2 sm:-mr-4 md:-mr-6 !overflow-visible"
+              className="font-luxurious text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] text-[#E4E2B8] leading-none  !overflow-visible"
               style={{ lineHeight: '0.75' }}
               splitBy="char" hinge="bottom" duration={1.2} stagger={0.08}
             />
@@ -78,7 +81,7 @@ END:VCALENDAR`;
           </div>
 
           {/* Krishi */}
-          <div className="flex items-baseline justify-center gap-3 md:gap-8 tracking-tighter leading-none -mt-4 sm:-mt-6 md:-mt-8 !overflow-visible">
+          <div className="flex items-baseline justify-center gap-2 md:gap-8 tracking-tighter leading-none -mt-4 sm:-mt-6 md:-mt-8 !overflow-visible">
             <FoldText
               text="K"
               className="font-luxurious text-8xl sm:text-9xl md:text-[11rem] lg:text-[13rem] text-[#E4E2B8] leading-none -mr-1 sm:-mr-3 md:-mr-4 tracking-tighter !overflow-visible"
@@ -95,7 +98,7 @@ END:VCALENDAR`;
         </div>
 
         {/* Status Tagline */}
-        <div className="mt-4 sm:mt-6">
+        <div className="mt-auto md:mt-6 mb-8 md:mb-0">
           <p className="font-inter text-sm sm:text-base md:text-lg tracking-tight text-[#E4E2B8] font-normal">
             A morning of love, <br /> legacy & new beginnings.
           </p>

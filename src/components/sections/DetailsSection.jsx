@@ -74,15 +74,19 @@ export default function DetailsSection() {
         {/* ===================================================================
             RIGHT HALF: Dreamy B&W Couple Photo Background with Centered Ticket Card
             =================================================================== */}
-        <div 
-          className="relative min-h-[640px] lg:min-h-screen w-full flex items-center justify-center p-6 sm:p-10 lg:p-12 overflow-hidden"
-          style={{
-            backgroundImage: "url('/images/section2_bg.jpg')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
+        <div className="relative min-h-[640px] lg:min-h-screen w-full flex items-center justify-center p-6 sm:p-10 lg:p-12 overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: "url('/images/rightimg.jpg')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              transform: 'scale(1.15)'
+            }}
+          />
+
           {/* Subtle dark overlay for contrast */}
           <div className="absolute inset-0 bg-black/25 pointer-events-none" />
 
