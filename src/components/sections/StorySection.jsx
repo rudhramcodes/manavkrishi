@@ -23,7 +23,7 @@ export default function StorySection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/IMG_3070.JPG')",
+          backgroundImage: "url('/images/IMG_3070.avif')",
           backgroundSize: "cover",
           backgroundPosition: "40% 45%",
           backgroundRepeat: "no-repeat"

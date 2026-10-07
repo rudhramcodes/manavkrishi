@@ -51,7 +51,7 @@ export default function Footer() {
     >
       {/* Background image covering the entire footer with parallax */}
       <motion.img
-        src="/images/IMG_3070.JPG"
+        src="/images/IMG_3070.avif"
         alt="Couple walking"
         className="absolute inset-0 w-full h-full object-cover object-center opacity-90"
         style={{ scale: bgScale, willChange: 'transform' }}
