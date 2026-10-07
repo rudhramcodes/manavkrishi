@@ -32,40 +32,67 @@ export default function DetailsSection() {
             =================================================================== */}
         <div className="bg-[#F7EAD7] text-[#470101] flex flex-col justify-center items-center px-6 sm:px-12 lg:px-16 py-20 lg:py-24 text-center relative z-10">
           <motion.div 
-            className="w-full max-w-lg mx-auto space-y-10 select-none"
+            className="w-full max-w-xl mx-auto space-y-10 sm:space-y-12 select-none"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
             
-            <motion.div variants={itemVariants} className="space-y-2">
-              <h3 className="font-inter uppercase tracking-tight text-xs sm:text-sm text-[#470101]/80 font-medium mb-6">
-                With The Blessings Of
-              </h3>
-            </motion.div>
-            
-            <motion.div variants={itemVariants} className="space-y-8">
-              <div className="space-y-2">
-                <p className="text-[#470101]"><span className="font-luxurious text-5xl sm:text-6xl">H</span> <span className="font-instrument text-3xl sm:text-4xl pl-1">is Parents</span></p>
-                <p className="font-instrument text-[1.1rem] sm:text-xl text-[#470101] leading-relaxed">
-                  Himanshu Girishchandra Vansia &<br/>Aaradhana Himanshu Vansia
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <p className="text-[#470101]"><span className="font-luxurious text-5xl sm:text-6xl">H</span> <span className="font-instrument text-3xl sm:text-4xl pl-1">is Grandparents</span></p>
-                <p className="font-instrument text-[1.1rem] sm:text-xl text-[#470101] leading-relaxed">
-                  Girishchandra Pratapsinhji Vansia &<br/>Nirmalaba Girishchandra Vansia
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="pt-8 mt-8 border-t border-[#470101]/15 space-y-6">
-              <p className="font-instrument text-lg sm:text-xl text-[#470101]/90 leading-relaxed">
-                With the love of those who raised him,<br/>
-                and the blessings of those who came before.
+            {/* The Warm Invitation Text */}
+            <motion.div variants={itemVariants} className="space-y-5 px-2">
+              <p className="font-instrument text-[1.1rem] sm:text-[1.25rem] text-[#470101] leading-relaxed">
+                And since this seems like a fairly important excuse to dress up, eat good food, take far too many pictures, and celebrate with our favourite people, we’d love for you to be there.
               </p>
+              <p className="font-instrument text-[1.15rem] sm:text-[1.3rem] text-[#470101] leading-relaxed font-medium">
+                Your presence, your blessings, and your smiles<br/>will make the evening even more special.
+              </p>
+            </motion.div>
+
+            {/* Elegant Divider */}
+            {/* <motion.div variants={itemVariants} className="flex justify-center items-center opacity-60">
+              <div className="w-16 h-[1px] bg-[#470101]/20"></div>
+              <div className="w-16 h-[1px] bg-[#470101]/20"></div>
+            </motion.div> */}
+            
+            {/* With Love - Parents */}
+            <motion.div variants={itemVariants} className="space-y-5">
+              <h3 className="font-inter uppercase tracking-widest text-[11px] sm:text-xs text-[#470101]/80 font-medium mb-4">
+                With Love
+              </h3>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-4">
+                <div className="space-y-1">
+                  <p className="font-instrument text-xl sm:text-[22px] text-[#470101] leading-tight">
+                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">H</span>imanshu &amp;<br/>Aaradhana
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <p className="font-instrument text-xl sm:text-[22px] text-[#470101] leading-tight">
+                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">D</span>igvijaysinh &amp;<br/>Ekta
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Blessings - Grandparents */}
+            <motion.div variants={itemVariants} className="pt-6 mt-6 border-t border-[#470101]/10 space-y-5">
+              <h3 className="font-inter uppercase tracking-widest text-[11px] sm:text-xs text-[#470101]/80 font-medium mb-4">
+                With the blessings of beloved Grandparents
+              </h3>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-4">
+                <div className="space-y-1">
+                  <p className="font-instrument text-xl sm:text-[22px] text-[#470101] leading-tight">
+                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">G</span>irishchandra &amp;<br/>Nirmalaba
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <p className="font-instrument text-xl sm:text-[22px] text-[#470101] leading-tight">
+                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">J</span>aydevsinh &amp;<br/>Indiraba
+                  </p>
+                </div>
+              </div>
             </motion.div>
 
           </motion.div>

@@ -40,7 +40,7 @@ export default function LocationSection() {
             }}
           >
             <motion.img
-              src="/images/location.jpg"
+              src="https://avadhprojects.com/media/projects/avadh-utopia-vapi/3.webp"
               alt="St. Mary's Chapel Wedding Venue"
               className="w-full h-full object-cover object-center scale-[1.35]" // Scaled up to allow room for parallax shifting
               style={{ y: photoY }}

@@ -20,10 +20,13 @@ export default function StorySection() {
       className="relative w-full py-20 sm:py-24 md:py-28 lg:py-32 flex items-center justify-center overflow-hidden"
     >
       {/* Background Wedding Couple Image (bg3.avif) */}
-      <div  
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/bg3.avif')",
+          backgroundImage: "url('/images/IMG_3070.JPG')",
+          backgroundSize: "cover",
+          backgroundPosition: "40% 45%",
+          backgroundRepeat: "no-repeat"
         }}
       >
         {/* Subtle vignette/warm overlay to enrich contrast */}
@@ -31,7 +34,7 @@ export default function StorySection() {
       </div>
 
       {/* Center Parchment Card Container */}
-      <motion.div 
+      <motion.div
         className="relative z-10 w-[88%] xs:w-[85%] sm:w-[78%] md:w-[65%] lg:w-[50%] max-w-[510px] mx-auto"
         initial="hidden"
         whileInView="visible"
@@ -41,8 +44,8 @@ export default function StorySection() {
           visible: {
             opacity: 1,
             y: 0,
-            transition: { 
-              duration: 1.2, 
+            transition: {
+              duration: 1.2,
               ease: [0.16, 1, 0.3, 1],
               staggerChildren: 0.3,
               delayChildren: 0.4
@@ -78,7 +81,7 @@ export default function StorySection() {
         <div className="absolute inset-0 flex flex-col items-center justify-center px-6 xs:px-7 sm:px-10 md:px-12 lg:px-14 pt-6 sm:pt-8 md:pt-10 pb-6 sm:pb-10 md:pb-12 text-center">
 
           {/* Section Title: "Our Story" */}
-          <motion.h2 
+          <motion.h2
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
@@ -93,24 +96,43 @@ export default function StorySection() {
           </motion.h2>
 
           {/* Story Body Text */}
-          <div className="max-w-[240px] xs:max-w-[270px] sm:max-w-[320px] md:max-w-[350px] text-[#470101] font-inter text-[10.5px] xs:text-[11px] sm:text-[13px] md:text-[14px] leading-[1.5] sm:leading-[1.55] font-normal tracking-tight text-center">
-            <motion.p 
+          <div className="max-w-[200px] xs:max-w-[280px] sm:max-w-[340px] md:max-w-[300px] text-[#470101] font-inter text-[14px] xs:text-[11px] sm:text-[13px] md:text-[16px] leading-[1.5] sm:leading-[1.55] font-normal tracking-tight text-center">
+            <motion.p
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
               }}
-              className="mb-2 sm:mb-3"
+              className="mb-3 sm:mb-4 tracking-tight leading-none"
             >
-              Some journeys are beautifully written in the stars, brought to life through the grace of time and the blessings of loved ones. What began as a meeting of two families has naturally blossomed into a profound connection of two hearts.
+              We’ve finally reached the stage where “when are you guys getting engaged?” has an answer!
             </motion.p>
             <motion.p
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
               }}
+              className="mb-4 sm:mb-5 tracking-tight leading-none "
             >
-              Rooted in shared values and guided by the warmth of our traditions, we have found in each other a lifelong companion. As we stand at the threshold of our forever, we invite you to witness a celebration of destiny and the beautiful beginning of our new chapter together.
+              After plenty of conversations, countless laughs, a little bit of chaos, and a rather successful decision to keep choosing each other…
             </motion.p>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+              }}
+              className="flex flex-col items-center justify-center mb-1"
+            >
+              <div className="text-xl sm:text-2xl md:text-3xl text-[#470101] leading-none mb-2">
+                <span className="font-luxurious text-3xl sm:text-4xl md:text-5xl">M</span>
+                <span className="font-instrument">anvendrasinh </span>
+                <span className="font-luxurious text-2xl sm:text-3xl mx-1">&amp;</span>
+                <span className="font-luxurious text-3xl sm:text-4xl md:text-5xl">K</span>
+                <span className="font-instrument">risha</span>
+              </div>
+              <p className="font-normal tracking-tight leading-none">
+                are officially making it engagement-official
+              </p>
+            </motion.div>
           </div>
 
         </div>

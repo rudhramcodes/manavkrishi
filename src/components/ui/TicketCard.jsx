@@ -28,15 +28,15 @@ export default function TicketCard() {
   `.replace(/\s+/g, ' ').trim();
 
   return (
-    <div 
+    <div
       className="relative w-[300px] sm:w-[320px] h-[580px] sm:h-[620px] select-none"
       style={{
         filter: 'drop-shadow(0 25px 40px rgba(0, 0, 0, 0.85))'
       }}
     >
       {/* Background SVG Ticket Shape */}
-      <svg 
-        className="absolute inset-0 w-full h-full pointer-events-none" 
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none"
         viewBox="0 0 320 620"
       >
         <path d={pathD} fill="#580C1B" />
@@ -44,16 +44,16 @@ export default function TicketCard() {
 
       {/* Ticket Interactive Content */}
       <div className="relative z-10 w-full h-full flex flex-col justify-between">
-        
+
         {/* Top Part: Inset Couple Photo + Names */}
         <div>
           {/* Couple Photograph */}
           <div className="pt-5 px-5">
             <div className="w-full h-[260px] sm:h-[280px] overflow-hidden bg-black/30 shadow-sm">
               <img
-                src="/images/ticket_couple.jpg"
+                src="/images/DSC07770.avif"
                 alt="Manav & Krishi"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-[center_80%] scale-[2] origin-[50%_55%] translate-y-[-10%]"
               />
             </div>
           </div>
@@ -80,13 +80,13 @@ export default function TicketCard() {
         </div>
 
         {/* Dotted Perforation Line (aligned with the notches at y=460) */}
-        <div 
+        <div
           className="absolute left-6 right-6 border-t border-dotted border-[#F7EAD7]/35 pointer-events-none"
           style={{ top: '74.2%' }}
         />
 
         {/* Bottom Part: Event Details */}
-        <div 
+        <div
           className="absolute left-6 right-6 text-[#F7EAD7] font-inter pointer-events-auto"
           style={{ top: '77%' }}
         >

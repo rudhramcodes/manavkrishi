@@ -58,25 +58,25 @@ export default function GallerySection({ onSelectPhoto }) {
   const moments = [
     {
       id: 1,
-      src: '/images/moment1.avif',
+      src: '/images/DSC08138.avif',
       alt: 'Moments - Serendipity & Blossom',
       style: { top: '12%', left: '2%' }
     },
     {
       id: 2,
-      src: '/images/moment2.avif',
+      src: '/images/DSC07370.avif',
       alt: 'Moments - Promise & Roses',
       style: { top: '8%', right: '4%' }
     },
     {
       id: 3,
-      src: '/images/moment3.avif',
+      src: '/images/DSC07490.avif',
       alt: 'Moments - Sacred Vows',
       style: { bottom: '10%', left: '6%' }
     },
     {
       id: 4,
-      src: '/images/moment4.avif',
+      src: '/images/DSC08173.avif',
       alt: 'Moments - Forever Together',
       style: { bottom: '8%', right: '2%' }
     }
@@ -145,7 +145,7 @@ export default function GallerySection({ onSelectPhoto }) {
               {/* Crisp White Polaroid Frame */}
               <div
                 onClick={() => onSelectPhoto && onSelectPhoto(item)}
-                className="bg-white p-2.5 sm:p-3 shadow-[0_12px_28px_rgba(71,1,1,0.14)] cursor-pointer select-none transition-transform hover:scale-105 hover:z-50"
+                className="bg-white p-2.5 sm:p-3 shadow-[0_12px_28px_rgba(71,1,1,0.14)] cursor-pointer select-none transition-transform"
               >
                 <div className="w-44 sm:w-48 lg:w-48 xl:w-52 aspect-square overflow-hidden bg-stone-100">
                   <img
