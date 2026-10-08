@@ -51,9 +51,9 @@ export default function TicketCard() {
           <div className="pt-5 px-5">
             <div className="w-full h-[260px] sm:h-[280px] overflow-hidden bg-black/30 shadow-sm">
               <img
-                src="/images/DSC07770.avif"
+                src="/images/couples.jpeg"
                 alt="Manav & Krishi"
-                className="w-full h-full object-cover object-[center_80%] scale-[2] origin-[50%_55%] translate-y-[-10%]"
+                className="w-full h-full object-cover object-[50%_80%] scale-[1.6] origin-[50%_15%] translate-y-[-10%]"
               />
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function TicketCard() {
 
           {/* Location Full Row */}
           <div className="text-xs sm:text-[13px] tracking-widest uppercase font-medium">
-            AVADH UTOPIA, VAPI
+            PEARL RESORT
           </div>
         </div>
 

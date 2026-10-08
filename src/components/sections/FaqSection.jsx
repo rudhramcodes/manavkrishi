@@ -23,14 +23,14 @@ export default function FaqSection() {
         "We recommend arriving 15 to 30 minutes before the start time of each event. This will give you plenty of time to settle in, grab a welcome drink, and mingle before the celebrations begin.",
     },
     {
-      question: "Is accommodation provided at Avadh Utopia?",
+      question: "Is accommodation provided at Pearl Resort?",
       answer:
         "Yes, we have arranged comfortable accommodations for our out-of-town guests at the venue. Please let us know your travel itinerary in advance so we can ensure everything is perfectly set up for you.",
     },
     {
       question: "Is parking available at the venue?",
       answer:
-        "Yes, ample secure parking is available at Avadh Utopia, Vapi. Valet services will also be provided at the entrance for your convenience.",
+        "Yes, ample secure parking is available at Pearl Resort. Valet services will also be provided at the entrance for your convenience.",
     },
   ];
 

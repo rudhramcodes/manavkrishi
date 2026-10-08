@@ -40,7 +40,7 @@ export default function LocationSection() {
             }}
           >
             <motion.img
-              src="https://avadhprojects.com/media/projects/avadh-utopia-vapi/3.webp"
+              src="https://pearlresortsilvassa.com/wp-content/uploads/2024/04/Resort-by-night.jpg"
               alt="St. Mary's Chapel Wedding Venue"
               className="w-full h-full object-cover object-center scale-[1.35]" // Scaled up to allow room for parallax shifting
               style={{ y: photoY }}
@@ -91,7 +91,7 @@ export default function LocationSection() {
             }}
             className="font-instrument text-2xl sm:text-3xl text-[#580C1B] mb-4 sm:mb-5 tracking-wide uppercase"
           >
-            Avadh Utopia, Vapi
+            Pearl Resort
           </motion.h3>
 
           
@@ -114,7 +114,7 @@ export default function LocationSection() {
             }}
           >
             <a
-              href="https://maps.google.com/?q=Avadh+Utopia,+Vapi"
+              href="https://www.google.com/maps/place/Pearl+Resort/@20.2617777,72.9208084,17z/data=!3m1!4b1!4m9!3m8!1s0x3be0cd1c51cf950d:0xc1398f840f0dd9a4!5m2!4m1!1i2!8m2!3d20.2617777!4d72.9208084!16s%2Fg%2F1hd_jz0rf!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MTAwNS4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#580C1B] hover:bg-[#470101] text-white font-inter text-xs sm:text-[13px] font-medium tracking-normal px-7 sm:px-8 py-2.5 sm:py-3 transition-colors duration-200 cursor-pointer"

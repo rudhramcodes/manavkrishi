@@ -64,7 +64,7 @@ export default function GallerySection({ onSelectPhoto }) {
     },
     {
       id: 2,
-      src: '/images/DSC07370.avif',
+      src: '/images/gallery2.jpeg',
       alt: 'Moments - Promise & Roses',
       style: { top: '8%', right: '4%' }
     },
