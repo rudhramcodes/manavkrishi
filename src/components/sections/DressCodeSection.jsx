@@ -2,15 +2,15 @@ import React from 'react';
 
 const LOOKBOOK_DATA = [
   {
-    id: 'engagement',
-    event: 'THE ENGAGEMENT',
-    rule: 'PASTELS ONLY',
-    description: 'Soft pastels, elegant silhouettes.',
+    id: 'fiesta',
+    event: 'FIESTA DE AMOR',
+    rule: 'THE BRIGHTER, THE BETTER',
+    description: 'Bold colours, festive energy.',
     palette: [
-      { name: 'Blush Pink', hex: '#F9E0E3' },
-      { name: 'Mint Green', hex: '#E2F0CB' },
-      { name: 'Powder Blue', hex: '#B5D3E7' },
-      { name: 'Soft Lavender', hex: '#E6E6FA' }
+      { name: 'Vibrant Red', hex: '#E3242B' },
+      { name: 'Sunny Yellow', hex: '#FFD700' },
+      { name: 'Tropical Teal', hex: '#008080' },
+      { name: 'Hot Magenta', hex: '#FF00FF' }
     ]
   },
   {
@@ -26,17 +26,17 @@ const LOOKBOOK_DATA = [
     ]
   },
   {
-    id: 'fiesta',
-    event: 'FIESTA DE AMOR',
-    rule: 'THE BRIGHTER, THE BETTER',
-    description: 'Bold colours, festive energy.',
+    id: 'engagement',
+    event: 'THE ENGAGEMENT',
+    rule: 'PASTELS ONLY',
+    description: 'Soft pastels, elegant silhouettes.',
     palette: [
-      { name: 'Vibrant Red', hex: '#E3242B' },
-      { name: 'Sunny Yellow', hex: '#FFD700' },
-      { name: 'Tropical Teal', hex: '#008080' },
-      { name: 'Hot Magenta', hex: '#FF00FF' }
+      { name: 'Blush Pink', hex: '#F9E0E3' },
+      { name: 'Mint Green', hex: '#E2F0CB' },
+      { name: 'Powder Blue', hex: '#B5D3E7' },
+      { name: 'Soft Lavender', hex: '#E6E6FA' }
     ]
-  }
+  },
 ];
 
 import { motion } from 'framer-motion';
