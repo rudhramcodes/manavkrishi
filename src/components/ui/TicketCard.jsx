@@ -52,7 +52,7 @@ export default function TicketCard() {
             <div className="w-full h-[260px] sm:h-[280px] overflow-hidden bg-black/30 shadow-sm">
               <img
                 src="/images/couples.jpeg"
-                alt="Manav & Krishi"
+                alt="Manvendra & Krisha"
                 className="w-full h-full object-cover object-[50%_80%] scale-[1.6] origin-[50%_15%] translate-y-[-10%]"
               />
             </div>
@@ -65,7 +65,7 @@ export default function TicketCard() {
                 M
               </span>
               <span className="font-instrument uppercase tracking-[0.1em] text-[#F7EAD7]">
-                anav &amp;
+                anvendra &amp;
               </span>
             </div>
             <div className="text-2xl sm:text-[26px] leading-tight -mt-1 sm:-mt-1.5">
@@ -73,7 +73,7 @@ export default function TicketCard() {
                 K
               </span>
               <span className="font-instrument uppercase tracking-[0.1em] text-[#F7EAD7]">
-                rishi
+                risha
               </span>
             </div>
           </div>

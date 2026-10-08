@@ -76,11 +76,11 @@ export default function ScheduleSection() {
         backgroundImage: 'radial-gradient(ellipse 90% 70% at 30% 40%, #680E1F 0%, #460612 100%)',
       }}
     >
-      <div className="max-w-5xl w-full mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-12 sm:gap-16 lg:gap-24">
+      <div className="max-w-5xl w-full mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 sm:gap-16 lg:gap-24">
 
         {/* Left Column: Heading & Vintage TV */}
         <motion.div 
-          className="flex flex-col items-center md:items-start text-left"
+          className="flex flex-col items-center lg:items-start text-left"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -88,9 +88,9 @@ export default function ScheduleSection() {
         >
 
           {/* Section Heading: "Schedule of events" */}
-          <div className="select-none text-center md:text-left mb-12 sm:mb-16 md:mb-20">
+          <div className="select-none text-center lg:text-left mb-12 sm:mb-16 md:mb-20">
             <h2 className="leading-none text-[#F7EAD7]">
-              <div className="flex items-baseline justify-center md:justify-start">
+              <div className="flex items-baseline justify-center lg:justify-start">
                 <span className="font-luxurious text-6xl sm:text-7xl md:text-8xl -mr-1">S</span>
                 <span className="font-instrument text-4xl sm:text-5xl md:text-6xl tracking-wide">chedule of</span>
               </div>
@@ -149,7 +149,7 @@ export default function ScheduleSection() {
 
         {/* Right Column: Scalloped Ticket Card */}
         <motion.div 
-          className="w-full md:w-auto flex justify-center"
+          className="w-full lg:w-auto flex justify-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}

@@ -61,7 +61,7 @@ export default function DetailsSection() {
                 With Love
               </h3>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-4">
                 <div className="space-y-1">
                   <p className="font-instrument text-xl sm:text-[22px] text-[#470101] leading-tight">
                     <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">H</span>imanshu &amp;<br/>Aaradhana
@@ -81,7 +81,7 @@ export default function DetailsSection() {
                 With the blessings of beloved Grandparents
               </h3>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-4">
                 <div className="space-y-1">
                   <p className="font-instrument text-xl sm:text-[22px] text-[#470101] leading-tight">
                     <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">G</span>irishchandra &amp;<br/>Nirmalaba

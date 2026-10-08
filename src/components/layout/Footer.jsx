@@ -97,7 +97,7 @@ export default function Footer() {
                 className="text-[#6B1B2C] text-2xl sm:text-3xl md:text-3xl text-center leading-[1.1] tracking-wide uppercase"
               >
                 <span className="font-luxurious text-4xl sm:text-4xl md:text-5xl">M</span>
-                <span className="font-instrument">anav &</span>
+                <span className="font-instrument">anvendra &</span>
               </motion.h3>
             </div>
             <div className="overflow-hidden pt-0.5 pb-1">
@@ -106,7 +106,7 @@ export default function Footer() {
                 className="text-[#6B1B2C] text-2xl sm:text-3xl md:text-3xl text-center leading-[1.1] tracking-wide uppercase"
               >
                 <span className="font-luxurious text-4xl sm:text-4xl md:text-5xl">K</span>
-                <span className="font-instrument">rishi</span>
+                <span className="font-instrument">risha</span>
               </motion.h3>
             </div>
           </div>

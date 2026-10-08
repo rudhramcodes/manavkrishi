@@ -60,7 +60,7 @@ export default function RsvpModal({ isOpen, onClose, onAddWish }) {
                 Kindly Respond
               </span>
               <h3 className="font-instrument text-3xl sm:text-4xl text-[#F7EAD7] mt-1">
-                RSVP to Manav &amp; Krishi
+                RSVP to Manvendra &amp; Krisha
               </h3>
               <p className="text-xs font-inter text-[#F7EAD7]/70 mt-1">
                 Please reply by July 15, 2026

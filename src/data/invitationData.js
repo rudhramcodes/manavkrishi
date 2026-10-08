@@ -1,11 +1,11 @@
 export const COUPLE_DATA = {
-  groom: 'Manav',
-  bride: 'Krishi',
+  groom: 'Manvendra',
+  bride: 'Krisha',
   groomInitial: 'M',
-  groomRest: 'anav &',
+  groomRest: 'anvendra &',
   brideInitial: 'K',
-  brideRest: 'rishi',
-  title: 'Manav & Krishi',
+  brideRest: 'risha',
+  title: 'Manvendra & Krisha',
   eventSubtitle: 'Engagement Day',
   eventDateFormatted: '14-10-2026',
   eventStatus: 'are getting engaged',
@@ -52,7 +52,7 @@ export const SCHEDULE_EVENTS = [
   {
     time: '11:30 PM',
     title: 'Sparkler Send-Off',
-    desc: 'Lighting sparklers to celebrate Manav & Krishi stepping into forever.'
+    desc: 'Lighting sparklers to celebrate Manvendra & Krisha stepping into forever.'
   }
 ];
 
@@ -61,7 +61,7 @@ export const GALLERY_PHOTOS = [
     id: 1,
     src: '/images/couple.jpg',
     title: 'Classic Embrace',
-    caption: 'Manav & Krishi in a timeless monochrome portrait'
+    caption: 'Manvendra & Krisha in a timeless monochrome portrait'
   },
   {
     id: 2,
@@ -87,7 +87,7 @@ export const INITIAL_WISHES = [
   {
     id: 2,
     name: 'Rohan Sharma',
-    message: 'Manav and Krishi, you two are made for each other. Counting down the days to celebrate!',
+    message: 'Manvendra and Krisha, you two are made for each other. Counting down the days to celebrate!',
     date: '2 hours ago'
   },
   {

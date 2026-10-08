@@ -18,7 +18,7 @@ export default function Navbar({ onOpenRsvp }) {
               className="flex items-center text-[#E4E2B8] hover:opacity-95 transition-opacity"
             >
               <span className="font-instrument text-2xl md:text-[28px] font-normal whitespace-nowrap">
-                Manav & Krishi
+                Manvendra & Krisha
               </span>
             </a>
           </div>

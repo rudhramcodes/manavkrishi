@@ -18,7 +18,7 @@ export default function LocationSection() {
       ref={sectionRef}
       className="relative w-full min-h-[85vh] md:min-h-screen py-20 sm:py-28 md:py-36 px-6 sm:px-12 bg-[#F7EAD7] flex items-center justify-center overflow-hidden"
     >
-      <div className="max-w-5xl w-full mx-auto flex flex-col md:flex-row items-center justify-center gap-12 sm:gap-16 lg:gap-24">
+      <div className="max-w-5xl w-full mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 sm:gap-16 lg:gap-24">
         
         {/* Left Column: Ornate Golden Frame with Parallax Photo */}
         <motion.div 

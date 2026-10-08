@@ -32,7 +32,7 @@ END:VCALENDAR`;
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden pt-24 pb-12 bg-cover bg-no-repeat bg-[77%] md:bg-[20%_40%]"
+      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden pt-24 pb-12 bg-cover bg-no-repeat bg-[77%] md:bg-[85%] lg:bg-[20%_40%]"
       style={{
         backgroundImage: "url('/images/DSC08125.avif')"
       }}
@@ -65,7 +65,7 @@ END:VCALENDAR`;
         {/* Groom & Bride Names with Luxurious Script First Letters */}
         <div className="flex-1 md:flex-none flex flex-col justify-center items-center my-2 sm:my-3 gap-5 select-none -mt-10 md:mt-0">
 
-          {/* Manav & */}
+          {/* manvendra & */}
           <div className="flex items-baseline justify-center gap-0 md:gap-2 tracking-tighter leading-none !overflow-visible">
             <FoldText
               text="M"
@@ -74,13 +74,13 @@ END:VCALENDAR`;
               splitBy="char" hinge="bottom" duration={1.2} stagger={0.08}
             />
             <FoldText
-              text="anav &"
+              text="anvendra &"
               className="font-instrument uppercase text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] text-[#E4E2B8] font-normal tracking-tighter !overflow-visible"
               splitBy="char" hinge="bottom" duration={1} stagger={0.05}
             />
           </div>
 
-          {/* Krishi */}
+          {/* Krisha */}
           <div className="flex items-baseline justify-center gap-2 md:gap-8 tracking-tighter leading-none -mt-4 sm:-mt-6 md:-mt-8 !overflow-visible">
             <FoldText
               text="K"
@@ -89,7 +89,7 @@ END:VCALENDAR`;
               splitBy="char" hinge="bottom" duration={1.2} stagger={0.08}
             />
             <FoldText
-              text="rishi"
+              text="risha"
               className="font-instrument uppercase text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] text-[#E4E2B8] font-normal tracking-tighter !overflow-visible"
               splitBy="char" hinge="bottom" duration={1} stagger={0.05}
             />
