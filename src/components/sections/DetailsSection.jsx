@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import TicketCard from '../ui/TicketCard';
 
@@ -103,15 +102,12 @@ export default function DetailsSection() {
             =================================================================== */}
         <div className="relative min-h-[640px] lg:min-h-screen w-full flex items-center justify-center p-6 sm:p-10 lg:p-12 overflow-hidden">
           {/* Background Image */}
-          <div 
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: "url('/images/rightimg.jpg')",
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              transform: 'scale(1.15)'
-            }}
+          <img
+            src="/images/rightimg.avif"
+            alt=""
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover object-center scale-[1.15] pointer-events-none"
           />
 
           {/* Subtle dark overlay for contrast */}

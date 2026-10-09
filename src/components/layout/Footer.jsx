@@ -1,8 +1,9 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 
 export default function Footer() {
   const containerRef = useRef(null);
+  const reducedMotion = useReducedMotion();
 
   // Background Parallax mapped to scroll
   const { scrollYProgress } = useScroll({
@@ -50,11 +51,11 @@ export default function Footer() {
       className="relative w-full h-[75vh] min-h-[550px] max-h-[800px] flex flex-col items-center justify-center overflow-hidden bg-[#1A1A1A]"
     >
       {/* Background image covering the entire footer with parallax */}
-      <motion.img
+      <motion.img loading="lazy" decoding="async"
         src="/images/IMG_3070.avif"
         alt="Couple walking"
         className="absolute inset-0 w-full h-full object-cover object-center opacity-90"
-        style={{ scale: bgScale, willChange: 'transform' }}
+        style={{ scale: reducedMotion ? 1.05 : bgScale }}
       />
 
       {/* Subtle overlay for better blending */}
@@ -69,8 +70,9 @@ export default function Footer() {
         className="relative z-10 w-[85%] max-w-[320px] sm:max-w-[360px] md:max-w-[420px]"
       >
         {/* Frame Image */}
-        <img
+        <img loading="lazy" decoding="async"
           src="/images/lastpatch.avif"
+          width="336" height="473"
           alt="Decorative Lace Frame"
           className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative z-0"
         />
@@ -80,9 +82,8 @@ export default function Footer() {
 
           {/* Couple's Black and White Photo with Cinematic Dolly-Zoom */}
           <div className="w-[88%] aspect-[4/5] overflow-hidden mb-3 sm:mb-4 mx-auto relative border border-[#6B1B2C]/10">
-            <motion.img
+            <motion.img loading="lazy" decoding="async"
               variants={photoVariants}
-              style={{ willChange: 'transform, opacity' }}
               src="/images/DSC07611.avif"
               alt="Couple Portrait"
               className="w-full h-full object-cover object-center absolute inset-0"

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useRef } from 'react';
 
 const LOOKBOOK_DATA = [
   {
@@ -39,9 +39,11 @@ const LOOKBOOK_DATA = [
   },
 ];
 
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 export default function DressCodeSection() {
+  const sectionRef = useRef(null);
+  const showTexture = useInView(sectionRef, { once: true, margin: '400px' });
   const containerVariants = {
     hidden: {},
     visible: {
@@ -61,6 +63,7 @@ export default function DressCodeSection() {
 
   return (
     <section 
+      ref={sectionRef}
       id="dress-code"
       className="relative w-full bg-[#580C1B] text-[#F7EAD7] py-20 sm:py-24 md:py-28 lg:py-32 px-5 sm:px-8 md:px-12 lg:px-16 overflow-hidden selection:bg-[#F7EAD7] selection:text-[#580C1B]"
       style={{
@@ -126,8 +129,8 @@ export default function DressCodeSection() {
                     className="flex-1 border-r border-[#FDFBF7]/30 last:border-r-0"
                     style={{
                       backgroundColor: swatch.hex,
-                      ...(item.id === 'after-dark' && {
-                        backgroundImage: `linear-gradient(${swatch.hex}99, ${swatch.hex}99), url('/images/sequin-texture.png')`,
+                      ...(item.id === 'after-dark' && showTexture && {
+                        backgroundImage: `linear-gradient(${swatch.hex}99, ${swatch.hex}99), url('/images/sequin-texture.webp')`,
                         backgroundBlendMode: 'screen, normal',
                         backgroundSize: 'auto, 240px auto',
                         backgroundPosition: 'center',

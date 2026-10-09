@@ -5,68 +5,48 @@ export function useAudioTheme() {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    // Initialize the audio element with the provided track
-    const audio = new Audio('/audio/the-night-we-met.mp3');
-    audio.loop = true; // Loop the music
+    const audio = new Audio();
+    audio.preload = 'none';
+    audio.src = '/audio/the-night-we-met.mp3';
+    audio.loop = true;
     audioRef.current = audio;
 
-    let interactionListener;
+    const updateState = () => setIsPlaying(!audio.paused);
+    const removeListeners = () => {
+      document.removeEventListener('click', startMusic);
+      document.removeEventListener('keydown', startMusic);
+    };
+    const startMusic = (event) => {
+      if (event.target.closest('[data-audio-toggle]')) return;
+      audio.play().then(removeListeners).catch(() => {});
+    };
 
-    // Attempt to autoplay initially
-    audio.play()
-      .then(() => {
-        setIsPlaying(true);
-      })
-      .catch((err) => {
-        // Browsers often block autoplay without user interaction
-        console.warn('Browser prevented autoplay. Waiting for user interaction...', err);
+    // Defer the track until a real gesture; scrolling cannot unlock browser audio.
+    document.addEventListener('click', startMusic);
+    document.addEventListener('keydown', startMusic);
+    audio.addEventListener('play', updateState);
+    audio.addEventListener('pause', updateState);
+    audio.addEventListener('play', removeListeners, { once: true });
 
-        // Function to start audio on first user interaction
-        interactionListener = () => {
-          if (audioRef.current) {
-            audioRef.current.play().then(() => {
-              setIsPlaying(true);
-            }).catch(e => console.warn(e));
-          }
-          
-          // Remove listeners after first interaction
-          document.removeEventListener('click', interactionListener);
-          document.removeEventListener('touchstart', interactionListener);
-          document.removeEventListener('scroll', interactionListener);
-        };
-
-        // Attach listeners to detect first interaction
-        document.addEventListener('click', interactionListener);
-        document.addEventListener('touchstart', interactionListener);
-        document.addEventListener('scroll', interactionListener, { passive: true });
-      });
-
-    // Cleanup on unmount
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-      if (interactionListener) {
-        document.removeEventListener('click', interactionListener);
-        document.removeEventListener('touchstart', interactionListener);
-        document.removeEventListener('scroll', interactionListener);
-      }
+      removeListeners();
+      audio.removeEventListener('play', updateState);
+      audio.removeEventListener('pause', updateState);
+      audio.removeEventListener('play', removeListeners);
+      audio.pause();
+      audio.removeAttribute('src');
+      audio.load();
+      audioRef.current = null;
     };
   }, []);
 
   const toggleMusic = () => {
-    if (!audioRef.current) return;
-
-    if (isPlaying) {
-      audioRef.current.pause();
-      setIsPlaying(false);
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (audio.paused) {
+      audio.play().catch((error) => console.warn('Unable to play background music:', error));
     } else {
-      audioRef.current.play().then(() => {
-        setIsPlaying(true);
-      }).catch((err) => {
-        console.error('Error playing audio track:', err);
-      });
+      audio.pause();
     }
   };
 

@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function TicketCard() {
   const W = 320;
@@ -50,7 +49,7 @@ export default function TicketCard() {
           {/* Couple Photograph */}
           <div className="pt-5 px-5">
             <div className="w-full h-[260px] sm:h-[280px] overflow-hidden bg-black/30 shadow-sm">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/couples.jpeg"
                 alt="Manvendra & Krisha"
                 className="w-full h-full object-cover object-[50%_80%] scale-[1.6] origin-[50%_15%] translate-y-[-10%]"

@@ -1,8 +1,9 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 
 export default function LocationSection() {
   const sectionRef = useRef(null);
+  const reducedMotion = useReducedMotion();
   
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -39,16 +40,16 @@ export default function LocationSection() {
               zIndex: 1
             }}
           >
-            <motion.img
+            <motion.img loading="lazy" decoding="async"
               src="https://pearlresortsilvassa.com/wp-content/uploads/2024/04/Resort-by-night.jpg"
               alt="St. Mary's Chapel Wedding Venue"
               className="w-full h-full object-cover object-center scale-[1.35]" // Scaled up to allow room for parallax shifting
-              style={{ y: photoY }}
+              style={{ y: reducedMotion ? 0 : photoY }}
             />
           </div>
 
           {/* Golden Ornate Frame (frame.avif) */}
-          <img
+          <img loading="lazy" decoding="async"
             src="/images/frame.avif"
             alt="Golden Frame"
             className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"

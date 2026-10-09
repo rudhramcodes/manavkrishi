@@ -1,8 +1,31 @@
-import React from 'react';
-import { Wine, Bell, UtensilsCrossed, Sparkles } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { Wine, Bell, Sparkles } from 'lucide-react';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
 
 export default function ScheduleSection() {
+  const videoRef = useRef(null);
+  const videoInView = useInView(videoRef, { amount: 0.1 });
+  const reducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const updatePlayback = () => {
+      if (videoInView && !document.hidden && !reducedMotion) {
+        if (!video.getAttribute('src')) video.src = '/videos/manav.mp4';
+        video.play().catch(() => {}); // Keep the poster if autoplay is unavailable.
+      } else {
+        video.pause();
+      }
+    };
+
+    updatePlayback();
+    document.addEventListener('visibilitychange', updatePlayback);
+    return () => {
+      document.removeEventListener('visibilitychange', updatePlayback);
+      video.pause();
+    };
+  }, [videoInView, reducedMotion]);
+
   const events = [
     {
       isDate: true,
@@ -33,11 +56,10 @@ export default function ScheduleSection() {
 
   // Variants for TV Power On
   const tvVariants = {
-    hidden: { opacity: 0, scale: 0.85, filter: 'brightness(0.2)' },
+    hidden: { opacity: 0, scale: 0.85 },
     visible: { 
       opacity: 1, 
       scale: 1, 
-      filter: 'brightness(1)',
       transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } 
     }
   };
@@ -116,16 +138,15 @@ export default function ScheduleSection() {
               }}
             >
               <video
-                autoPlay
+                ref={videoRef}
+                preload="none"
                 loop
                 muted
                 playsInline
                 poster="/images/tv_poster.jpg"
                 className="w-full h-full object-cover object-[center_30%]"
               >
-                <source src="/videos/manav.mp4" type="video/mp4" />
-                <source src="https://v1.pinimg.com/videos/iht/hls/b5/82/21/b58221abf387e516297aac750cc6ea1b.m3u8" type="application/x-mpegURL" />
-                <img
+                <img loading="lazy" decoding="async"
                   src="/images/tv_poster.jpg"
                   alt="Couple Celebration"
                   className="w-full h-full object-cover"
@@ -137,7 +158,7 @@ export default function ScheduleSection() {
             </div>
 
             {/* Vintage TV Overlay Frame (tv.avif) */}
-            <img
+            <img loading="lazy" decoding="async"
               src="/images/tv.avif"
               alt="Vintage Television"
               className="absolute inset-0 w-full h-full object-contain pointer-events-none"

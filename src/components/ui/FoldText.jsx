@@ -1,12 +1,8 @@
-'use client';
-
-import { useEffect, useMemo, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useMemo } from 'react';
+import { motion } from 'framer-motion';
 
 import './FoldText.css';
 
-gsap.registerPlugin(ScrollTrigger);
 
 const HINGE_CONFIG = {
   top: { origin: '50% 0%', rotateX: -92, rotateY: 0 },
@@ -35,18 +31,11 @@ const FoldText = ({
   hinge = 'top',
   duration = 0.65,
   stagger = 0.045,
-  ease = 'power3.out',
   perspective = 700,
   creaseShading = 0.55,
-  trigger = 'mount',
-  fontSize = 80,
-  fontWeight = 800,
-  color = '#f7f2e8',
   className = '',
   style = {}
 }) => {
-  const rootRef = useRef(null);
-  const timelineRef = useRef(null);
   const hingeConfig = HINGE_CONFIG[hinge] || HINGE_CONFIG.top;
   const safeCrease = clamp(creaseShading, 0, 1);
   const safePerspective = Math.max(120, perspective);
@@ -63,13 +52,16 @@ const FoldText = ({
           key={key}
           style={{ '--fold-perspective': `${safePerspective}px` }}
         >
-          <span
+          <motion.span
             className="fold-text-piece"
             data-fold-hinge={hinge}
-            style={{ transformOrigin: hingeConfig.origin, '--fold-crease': 0 }}
+            style={{ transformOrigin: hingeConfig.origin }}
+            initial={{ opacity: 0, rotateX: hingeConfig.rotateX, rotateY: hingeConfig.rotateY, '--fold-crease': safeCrease }}
+            animate={{ opacity: 1, rotateX: 0, rotateY: 0, '--fold-crease': 0 }}
+            transition={{ duration, delay: (segmentIndex - 1) * stagger, ease: [0.22, 1, 0.36, 1] }}
           >
             {content || '\u00A0'}
-          </span>
+          </motion.span>
         </span>
       );
     };
@@ -94,99 +86,10 @@ const FoldText = ({
       if (char === '\n') return <br key={`br-${index}`} />;
       return renderSegment(char === ' ' ? '\u00A0' : char, `segment-char-${index}`);
     });
-  }, [text, splitBy, hinge, hingeConfig.origin, safePerspective]);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return undefined;
-
-    const root = rootRef.current;
-    if (!root) return undefined;
-
-    const pieces = Array.from(root.querySelectorAll('.fold-text-piece'));
-    if (!pieces.length) return undefined;
-
-    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    const activeDuration = reduceMotion ? Math.min(duration, 0.22) : duration;
-    const activeStagger = reduceMotion ? Math.min(stagger, 0.02) : stagger;
-    const fromVars = {
-      opacity: 0,
-      rotateX: reduceMotion ? 0 : hingeConfig.rotateX,
-      rotateY: reduceMotion ? 0 : hingeConfig.rotateY,
-      '--fold-crease': reduceMotion ? 0 : safeCrease,
-      transformOrigin: hingeConfig.origin,
-      force3D: true
-    };
-    const toVars = {
-      opacity: 1,
-      rotateX: 0,
-      rotateY: 0,
-      '--fold-crease': 0,
-      duration: activeDuration,
-      ease: reduceMotion ? 'power1.out' : ease,
-      stagger: activeStagger,
-      clearProps: 'willChange'
-    };
-
-    const killTimeline = () => {
-      timelineRef.current?.kill();
-      timelineRef.current = null;
-      gsap.killTweensOf(pieces);
-    };
-
-    const play = repeat => {
-      killTimeline();
-      timelineRef.current = gsap.timeline({ repeat: repeat ? -1 : 0, repeatDelay: repeat ? 0.75 : 0 });
-      timelineRef.current.fromTo(pieces, fromVars, toVars);
-      return timelineRef.current;
-    };
-
-    let scrollTrigger;
-    let hoverHandler;
-
-    if (trigger === 'hover') {
-      gsap.set(pieces, { opacity: 1, rotateX: 0, rotateY: 0, '--fold-crease': 0, transformOrigin: hingeConfig.origin });
-      hoverHandler = () => play(false);
-      root.addEventListener('mouseenter', hoverHandler);
-    } else if (trigger === 'scroll') {
-      gsap.set(pieces, fromVars);
-      scrollTrigger = ScrollTrigger.create({
-        trigger: root,
-        start: 'top 82%',
-        once: true,
-        onEnter: () => play(false)
-      });
-    } else if (trigger === 'loop') {
-      play(true);
-    } else {
-      play(false);
-    }
-
-    return () => {
-      if (hoverHandler) root.removeEventListener('mouseenter', hoverHandler);
-      scrollTrigger?.kill();
-      killTimeline();
-    };
-  }, [
-    text,
-    splitBy,
-    hinge,
-    duration,
-    stagger,
-    ease,
-    perspective,
-    safeCrease,
-    trigger,
-    hingeConfig.origin,
-    hingeConfig.rotateX,
-    hingeConfig.rotateY
-  ]);
-
-  const rootStyle = {
-    ...style
-  };
+  }, [text, splitBy, hinge, hingeConfig, safePerspective, safeCrease, duration, stagger]);
 
   return (
-    <span ref={rootRef} className={`fold-text ${className}`.trim()} style={rootStyle}>
+    <span className={`fold-text ${className}`.trim()} style={style}>
       <span className="fold-text-sr-only">{text}</span>
       <span className="fold-text-visual" aria-hidden="true">
         {segments}

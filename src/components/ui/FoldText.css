@@ -52,7 +52,6 @@
   line-height: inherit;
   transform-style: preserve-3d;
   /* backface-visibility: hidden; removed to stop Safari clipping */
-  will-change: transform, opacity;
   padding: 0.5em;
   margin: -0.5em;
   overflow: visible !important;

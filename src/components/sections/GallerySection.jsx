@@ -1,8 +1,9 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform, useSpring, useReducedMotion } from 'framer-motion';
 
 export default function GallerySection({ onSelectPhoto }) {
   const sectionRef = useRef(null);
+  const reducedMotion = useReducedMotion();
 
   // Track scroll progress for the section
   // "start 50%" = top of section hits the middle of the viewport (animation starts late)
@@ -128,7 +129,7 @@ export default function GallerySection({ onSelectPhoto }) {
       {/* Desktop View: Scroll-Driven Center Scatter */}
       <div className="hidden lg:block absolute inset-0 pointer-events-none w-full h-full z-20">
         {moments.map((item, idx) => {
-          const t = desktopTransforms[idx];
+          const t = reducedMotion ? { rotate: [-8, -7, -5, 6][idx] } : desktopTransforms[idx];
           return (
             <motion.div
               key={item.id}
@@ -148,7 +149,7 @@ export default function GallerySection({ onSelectPhoto }) {
                 className="bg-white p-2.5 sm:p-3 shadow-[0_12px_28px_rgba(71,1,1,0.14)] cursor-pointer select-none transition-transform"
               >
                 <div className="w-44 sm:w-48 lg:w-48 xl:w-52 aspect-square overflow-hidden bg-stone-100">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={item.src}
                     alt={item.alt}
                     className="w-full h-full object-cover object-center"
@@ -184,7 +185,6 @@ export default function GallerySection({ onSelectPhoto }) {
               <motion.div
                 onClick={() => onSelectPhoto && onSelectPhoto(item)}
                 className={`bg-[#FDFBF7] p-3 pb-4 sm:p-4 sm:pb-5 rounded-sm shadow-[0_15px_40px_rgba(71,1,1,0.18)] border border-[#E4E2B8]/80 cursor-pointer select-none w-full relative ${rotation}`}
-                style={{ willChange: 'transform, opacity' }}
                 variants={{
                   hidden: { opacity: 0, x: -150, scale: 0.95 },
                   visible: { 
@@ -198,12 +198,12 @@ export default function GallerySection({ onSelectPhoto }) {
               >
                 {/* Top Pin */}
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
-                  <img src="/images/pin.avif" alt="pin" className="w-8 h-8 drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
+                  <img loading="lazy" decoding="async" src="/images/pin.avif" alt="pin" className="w-8 h-8 drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
                 </div>
 
                 {/* Photo */}
                 <div className="w-full aspect-[4/5] overflow-hidden bg-stone-200 relative z-10 border border-[#470101]/10">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={item.src}
                     alt={item.alt}
                     className="w-full h-full object-cover object-center"

@@ -1,9 +1,10 @@
 
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 
 export default function StorySection() {
   const sectionRef = useRef(null);
+  const reducedMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -20,15 +21,14 @@ export default function StorySection() {
       className="relative w-full py-20 sm:py-24 md:py-28 lg:py-32 flex items-center justify-center overflow-hidden"
     >
       {/* Background Wedding Couple Image (bg3.avif) */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/images/IMG_3070.avif')",
-          backgroundSize: "cover",
-          backgroundPosition: "40% 45%",
-          backgroundRepeat: "no-repeat"
-        }}
-      >
+      <div className="absolute inset-0">
+        <img
+          src="/images/IMG_3070.avif"
+          alt=""
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover object-[40%_45%]"
+        />
         {/* Subtle vignette/warm overlay to enrich contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 pointer-events-none" />
       </div>
@@ -55,8 +55,9 @@ export default function StorySection() {
       >
 
         {/* Torn Parchment Paper Background */}
-        <img
+        <img loading="lazy" decoding="async"
           src="/images/paper.avif"
+          width="854" height="1024"
           alt="Our Story Paper"
           className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.6)] select-none pointer-events-none"
         />
@@ -67,11 +68,12 @@ export default function StorySection() {
           style={{
             top: '-10%',
             width: '30%', // Slightly larger to compensate for padding
-            y: pinY
+            y: reducedMotion ? 0 : pinY
           }}
         >
-          <img
+          <img loading="lazy" decoding="async"
             src="/images/pin.avif"
+            width="854" height="1024"
             alt="Wax Seal"
             className="w-full h-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.4)]"
           />
