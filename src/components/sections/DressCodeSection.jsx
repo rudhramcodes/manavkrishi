@@ -124,7 +124,15 @@ export default function DressCodeSection() {
                   <div
                     key={idx}
                     className="flex-1 border-r border-[#FDFBF7]/30 last:border-r-0"
-                    style={{ backgroundColor: swatch.hex }}
+                    style={{
+                      backgroundColor: swatch.hex,
+                      ...(item.id === 'after-dark' && {
+                        backgroundImage: `linear-gradient(${swatch.hex}99, ${swatch.hex}99), url('/images/sequin-texture.png')`,
+                        backgroundBlendMode: 'screen, normal',
+                        backgroundSize: 'auto, 240px auto',
+                        backgroundPosition: 'center',
+                      }),
+                    }}
                   />
                 ))}
               </div>
