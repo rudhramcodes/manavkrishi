@@ -12,12 +12,16 @@ import ClosingCardSection from '../components/sections/ClosingCardSection';
 import FaqSection from '../components/sections/FaqSection';
 import LightboxModal from '../components/ui/LightboxModal';
 import AudioToggle from '../components/ui/AudioToggle';
+import WelcomeModal from '../components/ui/WelcomeModal';
 
 export default function Home() {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   return (
     <div className="min-h-screen bg-[#2b0209] text-[#F7EAD7] font-inter relative selection:bg-[#F7EAD7] selection:text-[#470101]">
+      {/* Welcome Modal for Audio Autoplay */}
+      <WelcomeModal />
+
       {/* Floating Navbar matching reference image */}
       <Navbar />
 

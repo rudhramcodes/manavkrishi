@@ -19,10 +19,10 @@ const LOOKBOOK_DATA = [
     rule: 'MAXIMUM BLING',
     description: 'More sparkle, more glamour.',
     palette: [
-      { name: 'Onyx Black', hex: '#1A1A1A' },
-      { name: 'Silver Shimmer', hex: '#C0C0C0' },
-      { name: 'Gold Glitz', hex: '#D4AF37' },
-      { name: 'Midnight Navy', hex: '#192841' }
+      { name: 'Onyx Black', hex: '#1A1A1A', image: '/images/black.jpeg' },
+      { name: 'Silver Shimmer', hex: '#C0C0C0', image: '/images/silver.jpeg' },
+      { name: 'Gold Glitz', hex: '#D4AF37', image: '/images/gold.jpeg' },
+      { name: 'Midnight Navy', hex: '#192841', image: '/images/navyblue.jpeg' }
     ]
   },
   {
@@ -129,12 +129,21 @@ export default function DressCodeSection() {
                     className="flex-1 border-r border-[#FDFBF7]/30 last:border-r-0"
                     style={{
                       backgroundColor: swatch.hex,
-                      ...(item.id === 'after-dark' && showTexture && {
-                        backgroundImage: `linear-gradient(${swatch.hex}99, ${swatch.hex}99), url('/images/sequin-texture.webp')`,
-                        backgroundBlendMode: 'screen, normal',
-                        backgroundSize: 'auto, 240px auto',
-                        backgroundPosition: 'center',
-                      }),
+                      ...(swatch.image
+                        ? {
+                            backgroundImage: `url('${swatch.image}')`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                          }
+                        : item.id === 'after-dark' && showTexture
+                        ? {
+                            backgroundImage: `linear-gradient(${swatch.hex}99, ${swatch.hex}99), url('/images/sequin-texture.webp')`,
+                            backgroundBlendMode: 'screen, normal',
+                            backgroundSize: 'auto, 240px auto',
+                            backgroundPosition: 'center',
+                          }
+                        : {}
+                      ),
                     }}
                   />
                 ))}

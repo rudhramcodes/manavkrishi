@@ -15,15 +15,22 @@ export function useAudioTheme() {
     const removeListeners = () => {
       document.removeEventListener('click', startMusic);
       document.removeEventListener('keydown', startMusic);
+      document.removeEventListener('touchstart', startMusic);
     };
     const startMusic = (event) => {
-      if (event.target.closest('[data-audio-toggle]')) return;
+      if (event?.target?.closest?.('[data-audio-toggle]')) return;
       audio.play().then(removeListeners).catch(() => {});
     };
 
-    // Defer the track until a real gesture; scrolling cannot unlock browser audio.
+    // Fallback listeners if browser blocks autoplay
     document.addEventListener('click', startMusic);
     document.addEventListener('keydown', startMusic);
+    document.addEventListener('touchstart', startMusic);
+
+    // Attempt to autoplay immediately on load
+    audio.play().then(removeListeners).catch(() => {
+      console.log("Autoplay blocked by browser, waiting for user interaction.");
+    });
     audio.addEventListener('play', updateState);
     audio.addEventListener('pause', updateState);
     audio.addEventListener('play', removeListeners, { once: true });
