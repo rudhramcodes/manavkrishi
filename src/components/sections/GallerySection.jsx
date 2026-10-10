@@ -71,13 +71,13 @@ export default function GallerySection({ onSelectPhoto }) {
     },
     {
       id: 3,
-      src: '/images/DSC07490.avif',
+      src: '/images/gallery3.jpeg',
       alt: 'Moments - Sacred Vows',
       style: { bottom: '10%', left: '6%' }
     },
     {
       id: 4,
-      src: '/images/DSC08173.avif',
+      src: '/images/gallery4.jpeg',
       alt: 'Moments - Forever Together',
       style: { bottom: '8%', right: '2%' }
     }

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Wine, Bell, Sparkles } from 'lucide-react';
+import { Wine, Bell, Sparkles, BellRing, Diamond } from 'lucide-react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 
 export default function ScheduleSection() {
@@ -50,7 +50,7 @@ export default function ScheduleSection() {
     {
       time: '11:00 AM onwards',
       title: 'THE ENGAGEMENT',
-      icon: <Bell className="w-4 h-4 text-[#C89B53]" />
+      icon: <img src="/images/diamond-ring.png" alt="Rings" className="w-5 h-5 object-contain" />
     }
   ];
 
