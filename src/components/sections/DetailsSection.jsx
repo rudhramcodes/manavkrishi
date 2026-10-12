@@ -21,7 +21,7 @@ const itemVariants = {
   }
 };
 
-export default function DetailsSection() {
+export default function DetailsSection({ engagementOnly = false }) {
   return (
     <section id="details" className="relative w-full overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
@@ -44,7 +44,7 @@ export default function DetailsSection() {
                 And since this seems like a fairly important excuse to dress up, eat good food, take far too many pictures, and celebrate with our favourite people, we’d love for you to be there.
               </p>
               <p className="font-instrument text-[1.15rem] sm:text-[1.3rem] text-[#470101] leading-relaxed font-medium">
-                Your presence, your blessings, and your smiles<br/>will make the evening even more special.
+                Your presence, your blessings, and your smiles<br/>will make the {engagementOnly ? 'morning' : 'evening'} even more special.
               </p>
             </motion.div>
 

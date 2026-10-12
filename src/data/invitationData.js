@@ -7,12 +7,12 @@ export const COUPLE_DATA = {
   brideRest: 'risha',
   title: 'Manvendra & Krisha',
   eventSubtitle: 'Engagement Day',
-  eventDateFormatted: '14-10-2026',
+  eventDateFormatted: '14-12-2026',
   eventStatus: 'are getting engaged',
-  eventDate: '2026-10-14T17:00:00',
-  venue: 'The Grand Botanical Estate & Orangery',
-  address: '184 Rosewood Manor Way, Tuscany Valley',
-  coordinates: '43.7696° N, 11.2558° E'
+  eventDate: '2026-12-14T11:00:00+05:30',
+  eventTime: '11:00 AM',
+  venue: 'Pearl Resort',
+  coordinates: '20.2617777° N, 72.9208084° E'
 };
 
 export const NAV_LINKS = [

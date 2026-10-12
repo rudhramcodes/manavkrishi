@@ -1,3 +1,4 @@
+import { COUPLE_DATA } from '../../data/invitationData';
 
 export default function TicketCard() {
   const W = 320;
@@ -92,18 +93,18 @@ export default function TicketCard() {
           {/* Date & Time Row */}
           <div className="flex items-start justify-between text-xs sm:text-[13px] tracking-wider uppercase font-medium mb-4 sm:mb-5">
             <div className="leading-snug">
-              <span>DECEMBER 14,</span>
+              <span>{new Date(COUPLE_DATA.eventDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', timeZone: 'Asia/Kolkata' })},</span>
               <br />
-              <span>2026</span>
+              <span>{new Date(COUPLE_DATA.eventDate).toLocaleDateString('en-US', { year: 'numeric', timeZone: 'Asia/Kolkata' })}</span>
             </div>
             <div className="text-right">
-              <span>11:00 AM</span>
+              <span>{COUPLE_DATA.eventTime}</span>
             </div>
           </div>
 
           {/* Location Full Row */}
           <div className="text-xs sm:text-[13px] tracking-widest uppercase font-medium">
-            PEARL RESORT
+            {COUPLE_DATA.venue}
           </div>
         </div>
 

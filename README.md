@@ -1,4 +1,13 @@
-# React + Vite
+# Manvendra & Krisha invitation
+
+- `/`: full invitation for 13–14 December 2026.
+- `/14-december`: engagement-only invitation for 14 December, 11 AM at Pearl Resort; includes only the pastel lookbook.
+
+Both URLs reuse the same template and assets. Run `npm run dev` for local previews and `npm run build` for production.
+
+Production hosting must serve `index.html` for `/14-december` and `/14-december/` so shared links and refreshes work.
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

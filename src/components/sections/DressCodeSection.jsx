@@ -41,7 +41,8 @@ const LOOKBOOK_DATA = [
 
 import { motion, useInView } from 'framer-motion';
 
-export default function DressCodeSection() {
+export default function DressCodeSection({ engagementOnly = false }) {
+  const looks = LOOKBOOK_DATA.filter((item) => !engagementOnly || item.id === 'engagement');
   const sectionRef = useRef(null);
   const showTexture = useInView(sectionRef, { once: true, margin: '400px' });
   const containerVariants = {
@@ -89,19 +90,19 @@ export default function DressCodeSection() {
             </span>
           </h2>
           <p className="mt-4 sm:mt-5 text-[#F7EAD7]/80 text-sm sm:text-base md:text-lg font-inter font-normal tracking-tight opacity-90">
-            A Palette For Every Celebration
+            {engagementOnly ? 'A Palette For The Engagement' : 'A Palette For Every Celebration'}
           </p>
         </motion.div>
 
         {/* 3 Column Grid for Events (Pantone Cards) */}
         <motion.div 
-          className="w-full grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-10 md:gap-6 lg:gap-10"
+          className={`w-full grid grid-cols-1 gap-10 md:gap-6 lg:gap-10 ${engagementOnly ? 'max-w-sm mx-auto' : 'lg:grid-cols-3 md:grid-cols-2'}`}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {LOOKBOOK_DATA.map((item) => (
+          {looks.map((item) => (
             <motion.div 
               key={item.id} 
               variants={cardVariants}

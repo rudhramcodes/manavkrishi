@@ -9,12 +9,11 @@ import LocationSection from '../components/sections/LocationSection';
 import GallerySection from '../components/sections/GallerySection';
 import DressCodeSection from '../components/sections/DressCodeSection';
 import ClosingCardSection from '../components/sections/ClosingCardSection';
-import FaqSection from '../components/sections/FaqSection';
 import LightboxModal from '../components/ui/LightboxModal';
 import AudioToggle from '../components/ui/AudioToggle';
 import WelcomeModal from '../components/ui/WelcomeModal';
 
-export default function Home() {
+export default function Home({ engagementOnly = false }) {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   return (
@@ -28,14 +27,13 @@ export default function Home() {
       {/* Main Content Sections */}
       <main>
         <HeroSection />
-        <DetailsSection />
+        <DetailsSection engagementOnly={engagementOnly} />
         <StorySection />
-        <LocationSection />
-        <ScheduleSection />
+        <LocationSection engagementOnly={engagementOnly} />
+        <ScheduleSection engagementOnly={engagementOnly} />
         <GallerySection onSelectPhoto={setSelectedPhoto} />
         <ClosingCardSection />
-        <DressCodeSection />
-        {/* <FaqSection /> */}
+        <DressCodeSection engagementOnly={engagementOnly} />
       </main>
 
       {/* Footer */}

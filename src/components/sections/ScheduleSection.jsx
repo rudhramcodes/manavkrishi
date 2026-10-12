@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react';
-import { Wine, Bell, Sparkles, BellRing, Diamond } from 'lucide-react';
+import { Wine, Sparkles } from 'lucide-react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
+import { COUPLE_DATA } from '../../data/invitationData';
 
-export default function ScheduleSection() {
+export default function ScheduleSection({ engagementOnly = false }) {
   const videoRef = useRef(null);
   const videoInView = useInView(videoRef, { amount: 0.1 });
   const reducedMotion = useReducedMotion();
@@ -28,31 +29,36 @@ export default function ScheduleSection() {
 
   const events = [
     {
+      day: 13,
       isDate: true,
       title: '13TH DECEMBER'
     },
     {
+      day: 13,
       time: '12:00 PM onwards',
       title: 'FIESTA DE AMOR',
       subtitle: 'A Mexican Poolside Celebration',
       icon: <Wine className="w-4 h-4 text-[#C89B53]" />
     },
     {
+      day: 13,
       time: '8:00 PM onwards',
       title: 'AFTER DARK',
       subtitle: 'An After-Hours Celebration',
       icon: <Sparkles className="w-4 h-4 text-[#C89B53]" />
     },
     {
+      day: 14,
       isDate: true,
       title: '14TH DECEMBER'
     },
     {
-      time: '11:00 AM onwards',
+      day: 14,
+      time: `${COUPLE_DATA.eventTime} onwards`,
       title: 'THE ENGAGEMENT',
       icon: <img src="/images/diamond-ring.png" alt="Rings" className="w-5 h-5 object-contain" />
     }
-  ];
+  ].filter((event) => !engagementOnly || event.day === 14);
 
   // Variants for TV Power On
   const tvVariants = {

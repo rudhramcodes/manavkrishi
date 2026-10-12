@@ -1,34 +1,8 @@
-import React from 'react';
-import { Calendar, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import FoldText from '../ui/FoldText';
 import { COUPLE_DATA } from '../../data/invitationData';
-import FrameCouple from '../ui/FrameCouple';
-import GoldenRings from '../ui/GoldenRings';
-import CountdownTimer from '../ui/CountdownTimer';
 
-export default function HeroSection({ onOpenRsvp }) {
-  const downloadCalendarFile = () => {
-    const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Viktor & Paula Engagement//EN
-BEGIN:VEVENT
-SUMMARY:Viktor & Paula's Engagement Celebration
-DESCRIPTION:Join us in celebrating the engagement of Viktor and Paula!
-LOCATION:The Grand Botanical Estate & Orangery, 184 Rosewood Manor Way
-DTSTART:20260902T170000Z
-DTEND:20260902T230000Z
-END:VEVENT
-END:VCALENDAR`;
-
-    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-    const link = document.createElement('a');
-    link.href = window.URL.createObjectURL(blob);
-    link.setAttribute('download', 'Viktor_Paula_Engagement.ics');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
+export default function HeroSection() {
   return (
     <section
       id="hero"
@@ -39,12 +13,6 @@ END:VCALENDAR`;
     >
       {/* Background subtle vignette */}
       <div className="absolute inset-0 pointer-events-none" />
-
-      {/* Ornate Golden Frame with Couple Photograph */}
-      {/* <FrameCouple /> */}
-
-      {/* Interlocking Golden Wedding Rings */}
-      {/* <GoldenRings /> */}
 
       {/* Main Centerpiece Typography */}
       <div className="relative z-20 text-center w-full flex-1 md:flex-none max-w-4xl mx-auto px-4 flex flex-col items-center justify-between md:justify-center pb-8 md:pb-0">
@@ -58,7 +26,7 @@ END:VCALENDAR`;
 
           {/* Date */}
           <p className="font-inter text-lg sm:text-xl md:text-2xl text-[#E4E2B8] tracking-wide mb-0 md:mb-6 font-normal drop-shadow-sm">
-            14 DECEMBER 2026
+            {new Date(COUPLE_DATA.eventDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' }).toUpperCase()}
           </p>
         </div>
 

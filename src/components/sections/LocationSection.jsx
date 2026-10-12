@@ -1,7 +1,8 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { COUPLE_DATA } from '../../data/invitationData';
 
-export default function LocationSection() {
+export default function LocationSection({ engagementOnly = false }) {
   const sectionRef = useRef(null);
   const reducedMotion = useReducedMotion();
   
@@ -42,7 +43,7 @@ export default function LocationSection() {
           >
             <motion.img loading="lazy" decoding="async"
               src="https://pearlresortsilvassa.com/wp-content/uploads/2024/04/Resort-by-night.jpg"
-              alt="St. Mary's Chapel Wedding Venue"
+              alt={`${COUPLE_DATA.venue} venue`}
               className="w-full h-full object-cover object-center scale-[1.35]" // Scaled up to allow room for parallax shifting
               style={{ y: reducedMotion ? 0 : photoY }}
             />
@@ -92,7 +93,7 @@ export default function LocationSection() {
             }}
             className="font-instrument text-2xl sm:text-3xl text-[#580C1B] mb-4 sm:mb-5 tracking-wide uppercase"
           >
-            Pearl Resort
+            {COUPLE_DATA.venue}
           </motion.h3>
 
           
@@ -104,7 +105,7 @@ export default function LocationSection() {
             }}
             className="font-inter text-[#580C1B] text-sm sm:text-base leading-snug font-normal max-w-[280px] sm:max-w-[320px] text-center mb-6 sm:mb-8"
           >
-            Join us for an afternoon of celebration, elegance and cherished moments.
+            Join us for {engagementOnly ? 'a morning' : 'an afternoon'} of celebration, elegance and cherished moments.
           </motion.p>
 
           {/* "View in google map" Button */}
