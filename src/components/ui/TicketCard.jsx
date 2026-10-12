@@ -92,7 +92,7 @@ export default function TicketCard() {
           {/* Date & Time Row */}
           <div className="flex items-start justify-between text-xs sm:text-[13px] tracking-wider uppercase font-medium mb-4 sm:mb-5">
             <div className="leading-snug">
-              <span>OCTOBER 14,</span>
+              <span>DECEMBER 14,</span>
               <br />
               <span>2026</span>
             </div>

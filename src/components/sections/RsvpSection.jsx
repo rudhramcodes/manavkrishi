@@ -114,7 +114,7 @@ export default function RsvpSection({ onAddWish }) {
                 Please reply by
               </p>
               <p className="font-inter text-sm sm:text-[15px] uppercase tracking-wider font-semibold text-[#580C1B] mt-1">
-                OCTOBER 1ST, 2026
+                DECEMBER 1ST, 2026
               </p>
             </div>
           </div>

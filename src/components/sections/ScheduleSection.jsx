@@ -29,7 +29,7 @@ export default function ScheduleSection() {
   const events = [
     {
       isDate: true,
-      title: '13TH OCTOBER'
+      title: '13TH DECEMBER'
     },
     {
       time: '12:00 PM onwards',
@@ -45,7 +45,7 @@ export default function ScheduleSection() {
     },
     {
       isDate: true,
-      title: '14TH OCTOBER'
+      title: '14TH DECEMBER'
     },
     {
       time: '11:00 AM onwards',

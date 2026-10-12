@@ -33,9 +33,9 @@ export default function Home() {
         <LocationSection />
         <ScheduleSection />
         <GallerySection onSelectPhoto={setSelectedPhoto} />
-        <DressCodeSection />
         <ClosingCardSection />
-        <FaqSection />
+        <DressCodeSection />
+        {/* <FaqSection /> */}
       </main>
 
       {/* Footer */}

@@ -58,7 +58,7 @@ END:VCALENDAR`;
 
           {/* Date */}
           <p className="font-inter text-lg sm:text-xl md:text-2xl text-[#E4E2B8] tracking-wide mb-0 md:mb-6 font-normal drop-shadow-sm">
-            14 OCTOBER 2026
+            14 DECEMBER 2026
           </p>
         </div>
 

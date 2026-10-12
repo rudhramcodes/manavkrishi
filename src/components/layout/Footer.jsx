@@ -101,7 +101,7 @@ export default function Footer() {
                 <span className="font-instrument">anvendra &</span>
               </motion.h3>
             </div>
-            <div className="overflow-hidden pt-0.5 pb-1">
+            <div className="overflow-hidden -pt-0.5 pb-1">
               <motion.h3 
                 variants={textRevealVariants}
                 className="text-[#6B1B2C] text-2xl sm:text-3xl md:text-3xl text-center leading-[1.1] tracking-wide uppercase"
@@ -121,7 +121,7 @@ export default function Footer() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.8 }}
         viewport={{ once: true }}
-        className="absolute bottom-4 sm:bottom-6 z-10 text-[10px] sm:text-xs font-inter tracking-widest uppercase font-medium text-white/50"
+        className="absolute bottom-4 sm:bottom-2 z-10 text-[10px] sm:text-[10px] font-inter tracking-tight uppercase font-medium text-white/50"
       >
         Created by <a href="https://rudhramenterprises.com" target='_blank' className="underline hover:text-white transition-colors duration-300">Rudhram enterprises</a>
       </motion.div>
