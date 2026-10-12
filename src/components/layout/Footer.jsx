@@ -48,7 +48,7 @@ export default function Footer() {
   return (
     <section 
       ref={containerRef}
-      className="relative w-full h-[75vh] min-h-[550px] max-h-[800px] flex flex-col items-center justify-center overflow-hidden bg-[#1A1A1A]"
+      className="relative w-full h-[70vh] min-h-[480px] max-h-[720px] flex flex-col items-center justify-center overflow-hidden bg-[#1A1A1A]"
     >
       {/* Background image covering the entire footer with parallax */}
       <motion.img loading="lazy" decoding="async"
@@ -67,7 +67,7 @@ export default function Footer() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.4 }}
-        className="relative z-10 w-[85%] max-w-[320px] sm:max-w-[360px] md:max-w-[420px]"
+        className="relative z-10 w-[70%] max-w-[230px] sm:max-w-[260px] md:max-w-[290px]"
       >
         {/* Frame Image */}
         <img loading="lazy" decoding="async"
@@ -81,7 +81,7 @@ export default function Footer() {
         <div className="absolute top-[13%] left-[20%] right-[16%] bottom-[13%] z-10 flex flex-col items-center justify-start">
 
           {/* Couple's Black and White Photo with Cinematic Dolly-Zoom */}
-          <div className="w-[88%] aspect-[4/5] overflow-hidden mb-3 sm:mb-4 mx-auto relative border border-[#6B1B2C]/10">
+          <div className="w-[88%] aspect-[4/5] overflow-hidden mb-2 sm:mb-2.5 mx-auto relative border border-[#6B1B2C]/10">
             <motion.img loading="lazy" decoding="async"
               variants={photoVariants}
               src="/images/DSC07611.avif"
@@ -91,22 +91,22 @@ export default function Footer() {
           </div>
 
           {/* Couple's Names: Elegant Mask Reveal */}
-          <div className="flex-1 flex flex-col items-center justify-start w-full mt-1">
+          <div className="flex-1 flex flex-col items-center justify-start w-full mt-0.5 sm:mt-1">
             <div className="overflow-hidden pb-0.5">
               <motion.h3 
                 variants={textRevealVariants}
-                className="text-[#6B1B2C] text-2xl sm:text-3xl md:text-3xl text-center leading-[1.1] tracking-wide uppercase"
+                className="text-[#6B1B2C] text-lg sm:text-xl md:text-2xl text-center leading-[1.1] tracking-wide uppercase whitespace-nowrap"
               >
-                <span className="font-luxurious text-4xl sm:text-4xl md:text-5xl">M</span>
+                <span className="font-luxurious text-2xl sm:text-3xl md:text-4xl">M</span>
                 <span className="font-instrument">anvendra &</span>
               </motion.h3>
             </div>
-            <div className="overflow-hidden -pt-0.5 pb-1">
+            <div className="overflow-hidden -pt-0.5 pb-0.5">
               <motion.h3 
                 variants={textRevealVariants}
-                className="text-[#6B1B2C] text-2xl sm:text-3xl md:text-3xl text-center leading-[1.1] tracking-wide uppercase"
+                className="text-[#6B1B2C] text-lg sm:text-xl md:text-2xl text-center leading-[1.1] tracking-wide uppercase whitespace-nowrap"
               >
-                <span className="font-luxurious text-4xl sm:text-4xl md:text-5xl">K</span>
+                <span className="font-luxurious text-2xl sm:text-3xl md:text-4xl">K</span>
                 <span className="font-instrument">risha</span>
               </motion.h3>
             </div>
@@ -121,7 +121,7 @@ export default function Footer() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.8 }}
         viewport={{ once: true }}
-        className="absolute bottom-4 sm:bottom-2 z-10 text-[10px] sm:text-[10px] font-inter tracking-tight uppercase font-medium text-white/50"
+        className="absolute bottom-4 sm:bottom-3 z-10 text-[10px] sm:text-[10px] font-inter tracking-tight uppercase font-medium text-white/50"
       >
         Created by <a href="https://rudhramenterprises.com" target='_blank' className="underline hover:text-white transition-colors duration-300">Rudhram enterprises</a>
       </motion.div>
