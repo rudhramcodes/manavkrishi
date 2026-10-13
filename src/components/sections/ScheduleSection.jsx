@@ -165,7 +165,7 @@ export default function ScheduleSection({ engagementOnly = false }) {
                 muted
                 playsInline
                 poster="/images/tv_poster.jpg"
-                className="w-full h-full object-cover object-[center_30%]"
+                className="w-full h-full object-cover object-[60%_90%] scale-[1.5] origin-bottom"
               >
                 <img loading="lazy" decoding="async"
                   src="/images/tv_poster.jpg"
