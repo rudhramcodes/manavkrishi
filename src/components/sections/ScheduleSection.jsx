@@ -12,7 +12,7 @@ export default function ScheduleSection({ engagementOnly = false }) {
     const video = videoRef.current;
     const updatePlayback = () => {
       if (videoInView && !document.hidden && !reducedMotion) {
-        if (!video.getAttribute('src')) video.src = '/videos/manav.mp4';
+        if (!video.getAttribute('src')) video.src = '/videos/IMG_1517.MP4';
         video.play().catch(() => {}); // Keep the poster if autoplay is unavailable.
       } else {
         video.pause();
@@ -66,13 +66,13 @@ export default function ScheduleSection({ engagementOnly = false }) {
       subtitle: 'A Grand Festive Feast',
       icon: <Utensils className="w-4 h-4 text-[#C89B53]" />
     },
-    {
-      day: 14,
-      time: '03:30 PM onwards',
-      title: 'HIGH TEA & CELEBRATIONS',
-      subtitle: 'Photographs, Toasts & Sweet Moments',
-      icon: <Sparkles className="w-4 h-4 text-[#C89B53]" />
-    }
+    // {
+    //   day: 14,
+    //   time: '03:30 PM onwards',
+    //   title: 'HIGH TEA & CELEBRATIONS',
+    //   subtitle: 'Photographs, Toasts & Sweet Moments',
+    //   icon: <Sparkles className="w-4 h-4 text-[#C89B53]" />
+    // }
   ].filter((event) => !engagementOnly || event.day === 14);
 
   // Variants for TV Power On
