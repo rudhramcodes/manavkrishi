@@ -29,11 +29,11 @@ export default function Home({ engagementOnly = false }) {
         <HeroSection />
         <DetailsSection engagementOnly={engagementOnly} />
         <StorySection />
-        <LocationSection engagementOnly={engagementOnly} />
         <ScheduleSection engagementOnly={engagementOnly} />
         <GallerySection onSelectPhoto={setSelectedPhoto} />
-        <ClosingCardSection />
         <DressCodeSection engagementOnly={engagementOnly} />
+        <LocationSection engagementOnly={engagementOnly} />
+        <ClosingCardSection />
       </main>
 
       {/* Footer */}

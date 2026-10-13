@@ -126,7 +126,7 @@ export default function StorySection() {
             >
               <div className="text-xl sm:text-2xl md:text-3xl text-[#470101] leading-none mb-2">
                 <span className="font-luxurious text-3xl sm:text-4xl md:text-5xl">M</span>
-                <span className="font-instrument">anvendrasinh </span>
+                <span className="font-instrument">anvendra </span>
                 <span className="font-luxurious text-2xl sm:text-3xl mx-1">&amp;</span>
                 <span className="font-luxurious text-3xl sm:text-4xl md:text-5xl">K</span>
                 <span className="font-instrument">risha</span>

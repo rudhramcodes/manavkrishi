@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Wine, Sparkles } from 'lucide-react';
+import { Wine, Sparkles, Utensils } from 'lucide-react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { COUPLE_DATA } from '../../data/invitationData';
 
@@ -56,7 +56,22 @@ export default function ScheduleSection({ engagementOnly = false }) {
       day: 14,
       time: `${COUPLE_DATA.eventTime} onwards`,
       title: 'THE ENGAGEMENT',
+      subtitle: 'Ring Ceremony & Family Blessings',
       icon: <img src="/images/diamond-ring.png" alt="Rings" className="w-5 h-5 object-contain" />
+    },
+    {
+      day: 14,
+      time: '01:00 PM onwards',
+      title: 'CELEBRATORY LUNCH',
+      subtitle: 'A Grand Festive Feast',
+      icon: <Utensils className="w-4 h-4 text-[#C89B53]" />
+    },
+    {
+      day: 14,
+      time: '03:30 PM onwards',
+      title: 'HIGH TEA & CELEBRATIONS',
+      subtitle: 'Photographs, Toasts & Sweet Moments',
+      icon: <Sparkles className="w-4 h-4 text-[#C89B53]" />
     }
   ].filter((event) => !engagementOnly || event.day === 14);
 
