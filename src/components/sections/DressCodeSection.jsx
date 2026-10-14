@@ -1,6 +1,35 @@
 import { useRef } from 'react';
 
-const LOOKBOOK_DATA = [
+const ENGAGEMENT_LOOK = {
+  id: 'engagement',
+  event: 'THE ENGAGEMENT',
+  time: '11:00 AM onwards',
+  dressCodeLabel: 'THE DRESS CODE',
+  rule: '🌸 PASTELS ONLY',
+  description: 'Soft pastels, elegant silhouettes.',
+  guidelines: [
+    {
+      target: 'For women',
+      text: 'Sarees, gowns or saree-gowns in soft, elegant pastel shades'
+    },
+    {
+      target: 'For men',
+      text: 'Suits in refined pastel or light neutral tones.'
+    }
+  ],
+  notes: [
+    '“Ladies, no whites please!”',
+    '“Gentlemen, no blacks please!”'
+  ],
+  palette: [
+    { name: 'Blush Pink', hex: '#F9E0E3' },
+    { name: 'Mint Green', hex: '#E2F0CB' },
+    { name: 'Powder Blue', hex: '#B5D3E7' },
+    { name: 'Soft Lavender', hex: '#E6E6FA' }
+  ]
+};
+
+const MAIN_LOOKBOOK_DATA = [
   {
     id: 'fiesta',
     event: 'FIESTA DE AMOR',
@@ -34,35 +63,21 @@ const LOOKBOOK_DATA = [
     event: 'THE ENGAGEMENT',
     time: '11:00 AM onwards',
     dressCodeLabel: 'THE DRESS CODE',
-    rule: '🌸 PASTELS ONLY',
+    rule: 'PASTELS ONLY',
     description: 'Soft pastels, elegant silhouettes.',
-    guidelines: [
-      {
-        target: 'For women',
-        text: 'Sarees, gowns or saree-gowns in soft, elegant pastel shades'
-      },
-      {
-        target: 'For men',
-        text: 'Suits in refined pastel or light neutral tones.'
-      }
-    ],
-    notes: [
-      '“Ladies, no whites please!”',
-      '“Gentlemen, no blacks please!”'
-    ],
     palette: [
       { name: 'Blush Pink', hex: '#F9E0E3' },
       { name: 'Mint Green', hex: '#E2F0CB' },
       { name: 'Powder Blue', hex: '#B5D3E7' },
       { name: 'Soft Lavender', hex: '#E6E6FA' }
     ]
-  },
+  }
 ];
 
 import { motion, useInView } from 'framer-motion';
 
 export default function DressCodeSection({ engagementOnly = false }) {
-  const looks = LOOKBOOK_DATA.filter((item) => !engagementOnly || item.id === 'engagement');
+  const looks = engagementOnly ? [ENGAGEMENT_LOOK] : MAIN_LOOKBOOK_DATA;
   const sectionRef = useRef(null);
   const showTexture = useInView(sectionRef, { once: true, margin: '400px' });
   const containerVariants = {
@@ -135,13 +150,13 @@ export default function DressCodeSection({ engagementOnly = false }) {
                   {item.event}
                 </h3>
 
-                {item.time && (
+                {/* {item.time && (
                   <p className="font-inter text-xs sm:text-[13px] font-semibold tracking-tight uppercase text-[#8C2D3A] mb-3">
                     {item.time}
                   </p>
-                )}
+                )} */}
 
-                <div className="w-12 h-px bg-[#C89B53]/35 mb-3" />
+                {/* <div className="w-12 h-px bg-[#C89B53]/35 mb-3" /> */}
 
                 {item.dressCodeLabel && (
                   <p className="font-inter text-[10px] sm:text-[11px] font-bold tracking-tight uppercase text-[#580C1B]/60 mb-1">
