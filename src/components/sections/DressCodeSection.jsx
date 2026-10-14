@@ -4,6 +4,8 @@ const LOOKBOOK_DATA = [
   {
     id: 'fiesta',
     event: 'FIESTA DE AMOR',
+    time: '12:00 PM onwards',
+    dressCodeLabel: 'THE DRESS CODE',
     rule: 'THE BRIGHTER, THE BETTER',
     description: 'Bold colours, festive energy.',
     palette: [
@@ -16,6 +18,8 @@ const LOOKBOOK_DATA = [
   {
     id: 'after-dark',
     event: 'AFTER DARK',
+    time: '8:00 PM onwards',
+    dressCodeLabel: 'THE DRESS CODE',
     rule: 'MAXIMUM BLING',
     description: 'More sparkle, more glamour.',
     palette: [
@@ -28,8 +32,24 @@ const LOOKBOOK_DATA = [
   {
     id: 'engagement',
     event: 'THE ENGAGEMENT',
-    rule: 'PASTELS ONLY',
+    time: '11:00 AM onwards',
+    dressCodeLabel: 'THE DRESS CODE',
+    rule: '🌸 PASTELS ONLY',
     description: 'Soft pastels, elegant silhouettes.',
+    guidelines: [
+      {
+        target: 'For women',
+        text: 'Sarees, gowns or saree-gowns in soft, elegant pastel shades'
+      },
+      {
+        target: 'For men',
+        text: 'Suits in refined pastel or light neutral tones.'
+      }
+    ],
+    notes: [
+      '“Ladies, no whites please!”',
+      '“Gentlemen, no blacks please!”'
+    ],
     palette: [
       { name: 'Blush Pink', hex: '#F9E0E3' },
       { name: 'Mint Green', hex: '#E2F0CB' },
@@ -94,9 +114,9 @@ export default function DressCodeSection({ engagementOnly = false }) {
           </p>
         </motion.div>
 
-        {/* 3 Column Grid for Events (Pantone Cards) */}
+        {/* Grid for Events (Pantone Cards) */}
         <motion.div 
-          className={`w-full grid grid-cols-1 gap-10 md:gap-6 lg:gap-10 ${engagementOnly ? 'max-w-sm mx-auto' : 'lg:grid-cols-3 md:grid-cols-2'}`}
+          className={`w-full grid grid-cols-1 gap-10 md:gap-6 lg:gap-10 ${engagementOnly ? 'max-w-md sm:max-w-lg mx-auto' : 'lg:grid-cols-3 md:grid-cols-2'}`}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -110,20 +130,62 @@ export default function DressCodeSection({ engagementOnly = false }) {
             >
 
               {/* Top Text Area */}
-              <div className="pt-10 pb-8 px-4 text-center z-10 flex-grow flex flex-col justify-center items-center">
-                <h3 className="font-instrument text-4xl sm:text-[42px] text-[#580C1B] mb-4 leading-none px-2 tracking-tight">
+              <div className="pt-8 pb-6 px-4 sm:px-6 text-center z-10 flex-grow flex flex-col items-center">
+                <h3 className="font-instrument text-3xl sm:text-[38px] text-[#580C1B] mb-1.5 leading-none px-1 tracking-tight">
                   {item.event}
                 </h3>
-                <p className="font-inter text-sm sm:text-[15px] font-bold tracking-tight text-[#C89B53] mb-1.5 uppercase">
+
+                {item.time && (
+                  <p className="font-inter text-xs sm:text-[13px] font-semibold tracking-tight uppercase text-[#8C2D3A] mb-3">
+                    {item.time}
+                  </p>
+                )}
+
+                <div className="w-12 h-px bg-[#C89B53]/35 mb-3" />
+
+                {item.dressCodeLabel && (
+                  <p className="font-inter text-[10px] sm:text-[11px] font-bold tracking-tight uppercase text-[#580C1B]/60 mb-1">
+                    {item.dressCodeLabel}
+                  </p>
+                )}
+
+                <p className="font-inter text-base sm:text-[17px] font-bold tracking-tight text-[#C89B53] mb-2 uppercase">
                   {item.rule}
                 </p>
-                <p className="font-inter text-sm sm:text-[15px] text-[#580C1B]/85 font-medium tracking-tight leading-snug max-w-[220px]">
-                  {item.description}
-                </p>
+
+                {item.description && !item.guidelines && (
+                  <p className="font-inter text-sm sm:text-[15px] text-[#580C1B]/85 font-medium tracking-tight leading-snug max-w-[220px]">
+                    {item.description}
+                  </p>
+                )}
+
+                {item.guidelines && (
+                  <div className="w-full my-3 space-y-2 text-left bg-[#F7EAD7]/40 border border-[#C89B53]/25 rounded-md p-3 sm:p-3.5">
+                    {item.guidelines.map((guide, idx) => (
+                      <p key={idx} className="font-inter text-xs sm:text-[13px] text-[#580C1B]/90 leading-relaxed tracking-tight">
+                        <strong className="font-semibold text-[#580C1B] block sm:inline">{guide.target}: </strong>
+                        <span>{guide.text}</span>
+                      </p>
+                    ))}
+                  </div>
+                )}
+
+                {item.notes && item.notes.length > 0 && (
+                  <div className="mt-2 space-y-1">
+                    {item.notes.map((note, idx) => (
+                      <p 
+                        key={idx} 
+                        className="font-instrument text-sm sm:text-[16px] text-[#8C2D3A] font-semibold"
+                      >
+                        {note}
+                      </p>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Bottom Static Color Palette */}
-              <div className="w-full flex h-32 sm:h-36 rounded-sm overflow-hidden z-10 border border-[#470101]/10">
+              <div className="w-full flex h-28 sm:h-32 rounded-sm overflow-hidden z-10 border border-[#470101]/10 mt-auto">
                 {item.palette.map((swatch, idx) => (
                   <div
                     key={idx}
