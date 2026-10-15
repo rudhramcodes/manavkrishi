@@ -92,6 +92,11 @@ export default function TicketCard({ engagementOnly = false }) {
           }`}
           style={engagementOnly ? { top: '77%' } : { top: '74.2%', bottom: '0px' }}
         >
+          {/* Tagline */}
+          <div className="text-xs sm:text-[13px] tracking-widest uppercase font-medium mb-3 sm:mb-4">
+            A Day to Remember
+          </div>
+
           {/* Date & Time Row (Engagement page only) */}
           {engagementOnly && (
             <div className="flex items-start justify-between text-xs sm:text-[13px] tracking-wider uppercase font-medium mb-4 sm:mb-5">
