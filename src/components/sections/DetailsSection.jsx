@@ -121,7 +121,7 @@ export default function DetailsSection({ engagementOnly = false }) {
             viewport={{ once: true, margin: "-100px" }}
             className="relative z-10 flex items-center justify-center w-full"
           >
-            <TicketCard />
+            <TicketCard engagementOnly={engagementOnly} />
           </motion.div>
 
         </div>

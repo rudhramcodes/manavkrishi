@@ -58,20 +58,7 @@ const MAIN_LOOKBOOK_DATA = [
       { name: 'Midnight Navy', hex: '#192841', image: '/images/navyblue.jpeg' }
     ]
   },
-  {
-    id: 'engagement',
-    event: 'THE ENGAGEMENT',
-    time: '11:00 AM onwards',
-    dressCodeLabel: 'THE DRESS CODE',
-    rule: 'PASTELS ONLY',
-    description: 'Soft pastels, elegant silhouettes.',
-    palette: [
-      { name: 'Blush Pink', hex: '#F9E0E3' },
-      { name: 'Mint Green', hex: '#E2F0CB' },
-      { name: 'Powder Blue', hex: '#B5D3E7' },
-      { name: 'Soft Lavender', hex: '#E6E6FA' }
-    ]
-  }
+  ENGAGEMENT_LOOK
 ];
 
 import { motion, useInView } from 'framer-motion';
