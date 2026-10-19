@@ -121,7 +121,7 @@ export default function GallerySection({ onSelectPhoto }) {
 
         {/* Description */}
         <motion.p variants={textVariants} className="font-inter text-[#580C1B] text-xs sm:text-[13px] md:text-sm leading-snug font-normal max-w-[290px] sm:max-w-[340px] mx-auto text-center opacity-90">
-          A small collection of memories before the engagement day the glances, journeys, and quiet celebrations that shaped everything they are about to begin.
+          A small collection of memories before the engagement day; the glances, journeys, and quiet celebrations that shaped everything they are about to begin.
         </motion.p>
 
       </motion.div>

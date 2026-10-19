@@ -105,7 +105,7 @@ export default function LocationSection({ engagementOnly = false }) {
             }}
             className="font-inter text-[#580C1B] text-sm sm:text-base leading-snug font-normal max-w-[280px] sm:max-w-[320px] text-center mb-6 sm:mb-8"
           >
-            Join us for {engagementOnly ? 'a morning' : 'an afternoon'} of celebration, elegance and cherished moments.
+            Join us as we celebrate love, togetherness, and the beginning of a beautiful journey, surrounded by those who mean the most to us.
           </motion.p>
 
           {/* "View in google map" Button */}

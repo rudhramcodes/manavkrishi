@@ -87,29 +87,15 @@ export default function TicketCard({ engagementOnly = false }) {
 
         {/* Bottom Part: Event Details */}
         <div
-          className={`absolute left-6 right-6 text-[#F7EAD7] font-inter pointer-events-auto ${
-            engagementOnly ? '' : 'flex flex-col justify-center'
-          }`}
-          style={engagementOnly ? { top: '77%' } : { top: '74.2%', bottom: '0px' }}
+          className="absolute left-6 right-6 text-[#F7EAD7] font-inter pointer-events-auto flex flex-col justify-center"
+          style={{ top: '74.2%', bottom: '0px' }}
         >
           {/* Tagline */}
-          <div className="text-xs sm:text-[13px] tracking-widest uppercase font-medium mb-3 sm:mb-4">
+          <div className="text-xs sm:text-[13px] tracking-widest uppercase font-medium leading-relaxed mb-3 sm:mb-4">
             A Day to Remember
+            <br />
+            A Lifetime to Cherish
           </div>
-
-          {/* Date & Time Row (Engagement page only) */}
-          {engagementOnly && (
-            <div className="flex items-start justify-between text-xs sm:text-[13px] tracking-wider uppercase font-medium mb-4 sm:mb-5">
-              <div className="leading-snug">
-                <span>{new Date(COUPLE_DATA.eventDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', timeZone: 'Asia/Kolkata' })},</span>
-                <br />
-                <span>{new Date(COUPLE_DATA.eventDate).toLocaleDateString('en-US', { year: 'numeric', timeZone: 'Asia/Kolkata' })}</span>
-              </div>
-              <div className="text-right">
-                <span>{COUPLE_DATA.eventTime}</span>
-              </div>
-            </div>
-          )}
 
           {/* Location Full Row */}
           <div className="text-xs sm:text-[13px] tracking-widest uppercase font-medium">

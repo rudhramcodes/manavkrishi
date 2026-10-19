@@ -106,7 +106,7 @@ export default function StorySection() {
               }}
               className="mb-3 sm:mb-4 tracking-tight leading-none"
             >
-              We’ve finally reached the stage where “when are you guys getting engaged?” has an answer!
+              We’ve finally reached the stage where “When are you guys getting engaged?” has an answer!
             </motion.p>
             <motion.p
               variants={{

@@ -54,14 +54,14 @@ export default function ScheduleSection({ engagementOnly = false }) {
     },
     {
       day: 14,
-      time: `${COUPLE_DATA.eventTime} onwards`,
+      time: `${COUPLE_DATA.eventTime}`,
       title: 'THE ENGAGEMENT',
       subtitle: 'Ring Ceremony & Family Blessings',
       icon: <img src="/images/diamond-ring.png" alt="Rings" className="w-5 h-5 object-contain" />
     },
     {
       day: 14,
-      time: '01:00 PM onwards',
+      time: '01:00 PM',
       title: 'CELEBRATORY LUNCH',
       subtitle: 'A Grand Festive Feast',
       icon: <Utensils className="w-4 h-4 text-[#C89B53]" />
