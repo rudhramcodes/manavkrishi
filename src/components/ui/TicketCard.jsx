@@ -98,9 +98,9 @@ export default function TicketCard({ engagementOnly = false }) {
           </div>
 
           {/* Location Full Row */}
-          <div className="text-xs sm:text-[13px] tracking-widest uppercase font-medium">
+          {/* <div className="text-xs sm:text-[13px] tracking-widest uppercase font-medium">
             {COUPLE_DATA.venue}
-          </div>
+          </div> */}
         </div>
 
       </div>
