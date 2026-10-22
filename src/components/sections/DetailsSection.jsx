@@ -63,12 +63,12 @@ export default function DetailsSection({ engagementOnly = false }) {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-4">
                 <div className="space-y-1">
                   <p className="font-instrument text-xl sm:text-[22px] text-[#470101] leading-tight">
-                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">H</span>imanshu &amp;<br/>Aaradhana Ba
+                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">H</span>imanshu &amp;<br/>AaradhanaBa
                   </p>
                 </div>
                 <div className="space-y-1">
                   <p className="font-instrument text-xl sm:text-[22px] text-[#470101] leading-tight">
-                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">D</span>igvijaysinh &amp;<br/>Ekta Ba
+                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">D</span>igvijaysinh &amp;<br/>EktaBa
                   </p>
                 </div>
               </div>
@@ -83,12 +83,12 @@ export default function DetailsSection({ engagementOnly = false }) {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-4">
                 <div className="space-y-1">
                   <p className="font-instrument text-xl sm:text-[22px] text-[#470101] leading-tight">
-                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">G</span>irishchandra &amp;<br/>Nirmala Ba
+                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">G</span>irishchandra &amp;<br/>NirmalaBa
                   </p>
                 </div>
                 <div className="space-y-1">
                   <p className="font-instrument text-xl sm:text-[22px] text-[#470101] leading-tight">
-                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">J</span>aydevsinh &amp;<br/>Indira Ba
+                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">J</span>aydevsinh &amp;<br/>IndiraBa
                   </p>
                 </div>
               </div>
