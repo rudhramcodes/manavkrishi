@@ -25,26 +25,26 @@ export default function DetailsSection({ engagementOnly = false }) {
   return (
     <section id="details" className="relative w-full overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
-        
+
         {/* ===================================================================
             LEFT HALF: Light Cream Background (#F7EAD7) with Deep Wine Font (#470101)
             =================================================================== */}
         <div className="bg-[#F7EAD7] text-[#470101] flex flex-col justify-center items-center px-6 sm:px-12 lg:px-16 py-20 lg:py-24 text-center relative z-10">
-          <motion.div 
+          <motion.div
             className="w-full max-w-xl mx-auto space-y-10 sm:space-y-12 select-none"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            
+
             {/* The Warm Invitation Text */}
             <motion.div variants={itemVariants} className="space-y-5 px-2">
               <p className="font-instrument text-[1.1rem] sm:text-[1.25rem] text-[#470101] leading-relaxed">
                 And since this seems like a fairly important excuse to dress up, eat good food, take far too many pictures, and celebrate with our favourite people, we’d love for you to be there.
               </p>
               <p className="font-instrument text-[1.15rem] sm:text-[1.3rem] text-[#470101] leading-relaxed font-medium">
-                Your presence, your blessings, and your smiles<br/>will make the {engagementOnly ? 'morning' : 'evening'} even more special.
+                Your presence, your blessings, and your smiles<br />will make the {engagementOnly ? 'morning' : 'evening'} even more special.
               </p>
             </motion.div>
 
@@ -53,22 +53,22 @@ export default function DetailsSection({ engagementOnly = false }) {
               <div className="w-16 h-[1px] bg-[#470101]/20"></div>
               <div className="w-16 h-[1px] bg-[#470101]/20"></div>
             </motion.div> */}
-            
+
             {/* With Love - Parents */}
             <motion.div variants={itemVariants} className="space-y-5">
               <h3 className="font-inter uppercase tracking-widest text-[11px] sm:text-xs text-[#470101]/80 font-medium mb-4">
                 With Love
               </h3>
-              
+
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-4">
                 <div className="space-y-1">
                   <p className="font-instrument text-xl sm:text-[22px] text-[#470101] leading-tight">
-                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">H</span>imanshu &amp;<br/>AaradhanaBa
+                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">H</span>imanshu &amp;<br />Aaradhanaba
                   </p>
                 </div>
                 <div className="space-y-1">
                   <p className="font-instrument text-xl sm:text-[22px] text-[#470101] leading-tight">
-                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">D</span>igvijaysinh &amp;<br/>EktaBa
+                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">D</span>igvijaysinh &amp;<br />Ektaba
                   </p>
                 </div>
               </div>
@@ -83,12 +83,12 @@ export default function DetailsSection({ engagementOnly = false }) {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-4">
                 <div className="space-y-1">
                   <p className="font-instrument text-xl sm:text-[22px] text-[#470101] leading-tight">
-                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">G</span>irishchandra &amp;<br/>NirmalaBa
+                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">G</span>irishchandra &amp;<br />Nirmalaba
                   </p>
                 </div>
                 <div className="space-y-1">
                   <p className="font-instrument text-xl sm:text-[22px] text-[#470101] leading-tight">
-                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">J</span>aydevsinh &amp;<br/>IndiraBa
+                    <span className="font-luxurious text-4xl sm:text-5xl text-[#470101]">J</span>aydevsinh &amp;<br />Indiraba
                   </p>
                 </div>
               </div>
