@@ -19,7 +19,7 @@ const ENGAGEMENT_LOOK = {
   ],
   notes: [
     '“Ladies, no whites please!”',
-    '“Gentlemen, no blacks please!”'
+    '“Gentlemen, no browns please!”'
   ],
   palette: [
     { name: 'Blush Pink', hex: '#F9E0E3' },
