@@ -61,7 +61,7 @@ export default function ScheduleSection({ engagementOnly = false }) {
     },
     {
       day: 14,
-      time: '01:00 PM',
+      time: '01:00 PM onwards',
       title: 'CELEBRATORY LUNCH',
       subtitle: 'A Grand Festive Feast',
       icon: <Utensils className="w-4 h-4 text-[#C89B53]" />
